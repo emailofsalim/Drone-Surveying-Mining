@@ -506,9 +506,9 @@ export function bundleAdjust(
   const poseIds = options.fixPoses ? [] : [...poses.keys()].sort();
   const pointIds = adjustable.map((p) => p.id).sort();
 
-  const poseOffset = new Map(poseIds.map((id, i) => [id, i * POSE_PARAMS]));
+  // Parameter vector layout: all pose parameters first, then all point
+  // parameters. getParam/setParam below decode an index back to its owner.
   const pointBase = poseIds.length * POSE_PARAMS;
-  const pointOffset = new Map(pointIds.map((id, i) => [id, pointBase + i * POINT_PARAMS]));
   const n = pointBase + pointIds.length * POINT_PARAMS;
 
   const initialRms = rmsReprojectionPx(
