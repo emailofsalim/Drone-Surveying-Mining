@@ -1,0 +1,123 @@
+/*
+ * DESIGN SYSTEM TOKENS — Spec Phase 01, §205 (accessibility).
+ *
+ * One token layer for the whole application. Light and dark are both defined;
+ * dark is the default because the 3D mine scene sits inside the same shell.
+ * Reduced-motion is honoured globally at the bottom of global.css.
+ */
+
+:root {
+  /* Surfaces — dark by default */
+  --c-bg: #0d1117;
+  --c-surface: #151b23;
+  --c-surface-2: #1c242e;
+  --c-surface-3: #252f3b;
+  --c-border: #2c3744;
+  --c-border-strong: #3d4b5c;
+
+  /* Text */
+  --c-text: #e6edf3;
+  --c-text-muted: #9aa8b8;
+  --c-text-faint: #6e7d8f;
+
+  /* Brand: iron-ore rust against pit-shadow blue */
+  --c-accent: #e2703a;
+  --c-accent-soft: #f0a37b;
+  --c-accent-dim: rgba(226, 112, 58, 0.14);
+  --c-accent-contrast: #1a0f08;
+
+  /* Semantic */
+  --c-ok: #4ec9a5;
+  --c-warn: #e9b949;
+  --c-danger: #e5645f;
+  --c-info: #62a8e5;
+  --c-ok-dim: rgba(78, 201, 165, 0.12);
+  --c-warn-dim: rgba(233, 185, 73, 0.12);
+  --c-danger-dim: rgba(229, 100, 95, 0.12);
+  --c-info-dim: rgba(98, 168, 229, 0.12);
+
+  /* Elevation / terrain ramp, used by plan view and contours */
+  --c-elev-low: #1f3b4d;
+  --c-elev-mid: #4e7a4a;
+  --c-elev-high: #b09a56;
+  --c-elev-top: #e8dcc0;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', 'Cascadia Mono', Menlo, monospace;
+
+  --fs-xs: 0.72rem;
+  --fs-sm: 0.82rem;
+  --fs-base: 0.94rem;
+  --fs-md: 1.06rem;
+  --fs-lg: 1.3rem;
+  --fs-xl: 1.7rem;
+  --fs-2xl: 2.3rem;
+  --fs-3xl: 3rem;
+
+  /* Space scale */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 14px;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 6px 20px rgba(0, 0, 0, 0.45);
+
+  --layout-max: 1280px;
+  --header-h: 60px;
+}
+
+:root[data-theme='light'] {
+  --c-bg: #f6f7f9;
+  --c-surface: #ffffff;
+  --c-surface-2: #f0f2f5;
+  --c-surface-3: #e4e8ee;
+  --c-border: #d8dee6;
+  --c-border-strong: #b9c3cf;
+
+  --c-text: #141a21;
+  --c-text-muted: #4f5b69;
+  --c-text-faint: #77838f;
+
+  --c-accent: #b5501c;
+  --c-accent-soft: #d3743f;
+  --c-accent-dim: rgba(181, 80, 28, 0.1);
+  --c-accent-contrast: #ffffff;
+
+  --c-ok: #1a7f63;
+  --c-warn: #8a6410;
+  --c-danger: #b23430;
+  --c-info: #1d5f97;
+  --c-ok-dim: rgba(26, 127, 99, 0.1);
+  --c-warn-dim: rgba(138, 100, 16, 0.1);
+  --c-danger-dim: rgba(178, 52, 48, 0.1);
+  --c-info-dim: rgba(29, 95, 151, 0.1);
+
+  --shadow-1: 0 1px 2px rgba(20, 26, 33, 0.08);
+  --shadow-2: 0 6px 20px rgba(20, 26, 33, 0.12);
+}
+
+/* High-contrast mode (§205) */
+:root[data-contrast='high'] {
+  --c-text: #ffffff;
+  --c-text-muted: #e0e6ec;
+  --c-border: #7d8b9b;
+  --c-border-strong: #a9b6c4;
+  --c-accent: #ff9a5c;
+}
+
+:root[data-theme='light'][data-contrast='high'] {
+  --c-text: #000000;
+  --c-text-muted: #1c242e;
+  --c-border: #3d4b5c;
+  --c-accent: #8d3a10;
+}

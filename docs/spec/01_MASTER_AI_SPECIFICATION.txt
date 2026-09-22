@@ -1,0 +1,6349 @@
+
+ULTIMATE FUTURE-READY MASTER AI BUILD SPECIFICATION
+DRONE SURVEYING IN MINING — OPEN-SOURCE INTERACTIVE WEB UNIVERSITY + FIELD SIMULATOR
+VERSION 4
+AUTHOR / PROJECT CREDIT: MD SALIM ANSARI
+LICENSE TARGET: MIT
+
+====================================================================
+0. EXECUTIVE VISION
+====================================================================
+
+Build a future-ready, open-source, browser-based interactive training
+system for Drone/UAV Surveying in Mining.
+
+The application must teach the complete lifecycle:
+
+MISSION NEED
+→ PROCUREMENT
+→ RECEIVING
+→ INSPECTION
+→ CONFIGURATION
+→ MAINTENANCE
+→ TRANSPORT
+→ MINE ENTRY
+→ SAFETY
+→ GEODESY
+→ CONTROL
+→ AIRCRAFT
+→ AERODYNAMICS
+→ FLIGHT CONTROL
+→ IMU
+→ MAGNETOMETER
+→ COMPASS
+→ TRUE/MAGNETIC/GRID NORTH
+→ CRS
+→ DATUM
+→ GEOID
+→ HEIGHT
+→ GNSS
+→ RTK
+→ PPK
+→ CORS/NTRIP
+→ CAMERA
+→ GSD
+→ OVERLAP
+→ MISSION PLANNING
+→ PREFLIGHT
+→ FLIGHT
+→ DATA CAPTURE
+→ LANDING
+→ DATA EXTRACTION
+→ DATA MANAGEMENT
+→ GCP/CHECK POINTS
+→ PHOTOGRAMMETRY
+→ KEYPOINTS
+→ DESCRIPTORS
+→ MATCHING
+→ TIE POINTS
+→ TRIANGULATION
+→ CAMERA POSE
+→ BUNDLE ADJUSTMENT
+→ REPROJECTION ERROR
+→ DENSE RECONSTRUCTION
+→ POINT CLOUD
+→ CLASSIFICATION
+→ TIN
+→ DSM
+→ DTM
+→ DEM
+→ ORTHOMOSAIC
+→ MESH
+→ CONTOURS
+→ SECTIONS
+→ SURFACE COMPARISON
+→ VOLUME
+→ STOCKPILE RECONCILIATION
+→ GIS
+→ CAD
+→ MINE MODELLING
+→ QA/QC
+→ REPORT
+→ ENGINEERING DECISION.
+
+This is NOT a slide deck.
+This is NOT a static online course.
+This is NOT a collection of videos.
+
+It is an interactive digital laboratory in which the learner is the operator,
+pilot, survey engineer and analyst.
+
+The application should feel like the future of technical teaching:
+the learner sees a physical concept, manipulates it, measures it,
+changes parameters, causes a failure, diagnoses the failure,
+repairs the workflow and observes downstream consequences.
+
+====================================================================
+1. THE SINGLE MOST IMPORTANT DESIGN PRINCIPLE
+====================================================================
+
+Every major concept must answer five questions simultaneously:
+
+WHAT IS IT?
+HOW DOES IT WORK?
+HOW DO I OPERATE IT?
+HOW DOES IT AFFECT THE SURVEY?
+HOW DO I PROVE THE RESULT IS TRUSTWORTHY?
+
+A subject is incomplete until all five are represented.
+
+Example:
+
+COMPASS CALIBRATION
+
+Not sufficient:
+“Calibrate compass before flight.”
+
+Required:
+1. Show the magnetometer physically inside the aircraft.
+2. Show X/Y/Z magnetic measurements.
+3. Show Earth’s magnetic field vector.
+4. Show hard-iron offset.
+5. Show soft-iron distortion.
+6. Show calibration data collection.
+7. Show the fitted compensation model.
+8. Show corrected output.
+9. Move aircraft next to a steel excavator.
+10. Show local disturbance despite prior calibration.
+11. Show heading error.
+12. Compare with an independent reference.
+13. Let the learner diagnose the difference.
+14. Explain calibration versus declination.
+15. Explain calibration versus local attraction.
+16. Explain why a “successful calibration” does not prove the environment is magnetically clean.
+
+This depth rule applies everywhere.
+
+====================================================================
+2. FUTURE TEACHING MODEL
+====================================================================
+
+The application should teach in layers.
+
+LAYER A — INTUITION
+Physical objects and animations.
+
+LAYER B — OPERATION
+Click, drag, configure, fly, place GCP, inspect data.
+
+LAYER C — MATHEMATICS
+Formula, units, substituted values, dimensional analysis.
+
+LAYER D — ENGINEERING
+Methodology, assumptions, limitations, QA/QC.
+
+LAYER E — EXPERT
+Reference systems, estimation, error propagation, sensor fusion,
+photogrammetric geometry, surface modelling and data provenance.
+
+The learner can move from:
+“Explain simply”
+to
+“Show me the equations”
+to
+“Show me the assumptions”
+to
+“Show me where the error enters.”
+
+====================================================================
+3. MASTER APPLICATION MODES
+====================================================================
+
+MODE 1 — DISCOVER
+Explore the mine and equipment freely.
+
+MODE 2 — LEARN
+Structured instructional pathway.
+
+MODE 3 — GUIDED PRACTICE
+Hints and instructions.
+
+MODE 4 — SIMULATION
+Realistic decision environment.
+
+MODE 5 — FAILURE LAB
+Intentionally break systems.
+
+MODE 6 — EXPERT LAB
+Raw measurements, parameters and equations.
+
+MODE 7 — FREE FLIGHT
+Manual flight practice.
+
+MODE 8 — SURVEY FLIGHT
+Mission-focused automated survey.
+
+MODE 9 — PROCESSING LAB
+Synthetic datasets and reconstruction.
+
+MODE 10 — CASE STUDY
+Complete mining assignment.
+
+MODE 11 — ASSESSMENT
+Competency evaluation.
+
+MODE 12 — TRAINER
+Instructor controls, scenario injection and explanation.
+
+====================================================================
+4. THE VIRTUAL MINE
+====================================================================
+
+Create a reusable 3D open-pit mine environment.
+
+Include:
+- benches
+- pit floor
+- highwall
+- haul roads
+- ramps
+- drains
+- stockpile
+- waste dump
+- crusher
+- buildings
+- power infrastructure
+- vegetation
+- water/drainage
+- survey monuments
+- GCP targets
+- HEMM
+- emergency zones
+- launch locations.
+
+The learner can switch between:
+
+PLAN VIEW
+3D VIEW
+PROFILE
+SECTION
+ORTHO VIEW
+MAP VIEW
+POINT-CLOUD VIEW.
+
+The same physical feature must remain spatially consistent between all views.
+
+====================================================================
+5. THE “DIGITAL TWIN” PRINCIPLE
+====================================================================
+
+Use one underlying simulated mine dataset.
+
+Do not create disconnected illustrations.
+
+For example, the same stockpile exists as:
+
+REALISTIC 3D OBJECT
+→ RGB images
+→ point cloud
+→ DSM
+→ DTM
+→ orthomosaic
+→ contour map
+→ TIN
+→ volume
+→ change map.
+
+This allows the learner to follow one object through the complete workflow.
+
+====================================================================
+6. SIGNATURE EXPERIENCE — FOLLOW ONE ROCK
+====================================================================
+
+Create a signature animation following one physical rock/ground feature.
+
+STAGE 1
+Real mine surface.
+
+STAGE 2
+Drone camera sees it.
+
+STAGE 3
+The feature occupies certain image pixels.
+
+STAGE 4
+Feature/keypoint detector identifies it.
+
+STAGE 5
+Corresponding feature is found in another image.
+
+STAGE 6
+Matched observations become a tie-point relationship.
+
+STAGE 7
+Camera rays intersect.
+
+STAGE 8
+3D position is estimated.
+
+STAGE 9
+Point appears in the sparse/dense cloud.
+
+STAGE 10
+Point is classified as ground/non-ground.
+
+STAGE 11
+Point contributes to TIN/terrain surface.
+
+STAGE 12
+Surface contributes to contour/section/volume.
+
+STAGE 13
+Final engineering output references the point.
+
+Then display:
+“ONE PHYSICAL FEATURE → COMPLETE DIGITAL SURVEY CHAIN.”
+
+====================================================================
+7. SIGNATURE EXPERIENCE — FOLLOW ONE HEIGHT
+====================================================================
+
+Track a single elevation through:
+
+BENCHMARK
+→ GNSS/levelling observation
+→ reference system
+→ ellipsoidal height
+→ geoid relation
+→ orthometric height/RL
+→ control point
+→ photogrammetric reconstruction
+→ DTM elevation
+→ contour
+→ section
+→ volume.
+
+The learner must see that “height” is never merely a number.
+
+====================================================================
+8. SIGNATURE EXPERIENCE — FOLLOW ONE COORDINATE
+====================================================================
+
+Track:
+
+PHYSICAL POINT
+→ observation
+→ latitude/longitude or source coordinates
+→ reference frame/datum
+→ projected coordinate
+→ Easting/Northing
+→ GIS
+→ CAD
+→ mine model
+→ report.
+
+Show metadata traveling with the coordinate.
+
+====================================================================
+9. SIGNATURE EXPERIENCE — FOLLOW ONE ERROR
+====================================================================
+
+Example:
+
+WRONG VERTICAL REFERENCE
+→ incorrect Z
+→ incorrect DTM
+→ incorrect surface comparison
+→ incorrect volume
+→ misleading engineering interpretation.
+
+Use animation to show how a small early error can become significant downstream.
+
+====================================================================
+10. PROCUREMENT LAB
+====================================================================
+
+The learner should not begin with “which drone is best?”
+
+Begin with:
+“What survey problem are we solving?”
+
+Examples:
+- pit progress
+- stockpile volume
+- dump volume
+- haul road
+- highwall
+- lease/land
+- environment
+- rehabilitation
+- inspection
+- corridor.
+
+Then define:
+- area
+- terrain
+- output
+- GSD
+- expected detail
+- vertical/horizontal reference
+- control
+- operational conditions
+- payload
+- endurance
+- data size
+- processing
+- budget
+- support.
+
+Create a simulated catalog containing:
+multirotors
+fixed-wing
+VTOL
+RGB
+LiDAR
+thermal
+multispectral
+RTK
+PPK
+batteries
+GCP equipment
+GNSS equipment
+computing.
+
+The learner selects a configuration and receives a technical explanation,
+not a “winner.”
+
+====================================================================
+11. PROCUREMENT TECHNICAL EVALUATION
+====================================================================
+
+Compare:
+- airframe
+- payload capacity
+- endurance
+- wind capability
+- battery system
+- controller
+- telemetry
+- GNSS
+- RTK/PPK
+- payload interfaces
+- storage
+- image metadata
+- raw logs
+- software dependency
+- export options
+- SDK/data accessibility
+- spare parts
+- warranty
+- repair support
+- training
+- total cost of ownership.
+
+Never fabricate vendor specifications.
+
+Product-specific values must be loaded from verified documentation.
+
+====================================================================
+12. DRONE RECEIVING / ACCEPTANCE
+====================================================================
+
+Simulate opening the shipment.
+
+Check:
+- model
+- serial number
+- asset number
+- payload
+- batteries
+- controller
+- charger
+- cables
+- props
+- accessories
+- manuals
+- supplied documents.
+
+Create an acceptance report.
+
+====================================================================
+13. INCOMING INSPECTION
+====================================================================
+
+Learner physically inspects:
+- body
+- arms
+- motor mounts
+- landing gear
+- propellers
+- gimbal
+- camera
+- connectors
+- batteries
+- controller
+- cables
+- antennas.
+
+Introduce hidden faults.
+
+Example:
+hairline frame crack.
+
+Learner must detect it.
+
+====================================================================
+14. ASSET TRACEABILITY
+====================================================================
+
+Track relationships:
+
+AIRCRAFT ID
+↔ PAYLOAD ID
+↔ BATTERY ID
+↔ CONTROLLER ID
+↔ MISSION ID
+↔ DATASET ID
+↔ PROCESSING PROJECT
+↔ FINAL REPORT.
+
+This demonstrates evidence and auditability.
+
+====================================================================
+15. FIRMWARE / CONFIGURATION CONTROL
+====================================================================
+
+Teach:
+- firmware
+- application version
+- configuration
+- payload firmware
+- compatibility.
+
+Simulate:
+update
+→ test
+→ verify
+→ record version.
+
+Never make a blanket claim such as “always update immediately.”
+
+Teach controlled maintenance.
+
+====================================================================
+16. BATTERY SCIENCE
+====================================================================
+
+Explain:
+cell
+voltage
+current
+capacity
+energy
+power
+charge
+discharge
+temperature
+internal resistance
+state of charge
+state of health
+cycle count.
+
+Formulas:
+
+P = VI
+
+E = Pt
+
+Also show why battery performance depends on operating conditions.
+
+Create:
+battery health trend
+cycle history
+temperature
+mission load
+wind.
+
+Never provide dangerous battery procedures that conflict with manufacturer guidance.
+Link operational practice to approved documentation.
+
+====================================================================
+17. TRANSPORT / MOBILIZATION
+====================================================================
+
+Virtual packing checklist.
+
+Track:
+- aircraft
+- payload
+- batteries
+- charger
+- controller
+- GNSS
+- base
+- GCP targets
+- measuring equipment
+- laptop
+- backup storage
+- tools
+- spares
+- PPE
+- required documents/permissions.
+
+Show consequences of forgotten equipment.
+
+====================================================================
+18. MINE SITE ENTRY
+====================================================================
+
+Teach:
+- mine induction
+- traffic
+- HEMM
+- blasting
+- power
+- highwalls
+- people
+- radio communication
+- environmental conditions
+- operational restrictions.
+
+Drone mission planning starts with site understanding, not software.
+
+====================================================================
+19. DRONE AIRCRAFT TYPES
+====================================================================
+
+Create physically accurate conceptual models of:
+- quadrotor
+- hexacopter
+- octocopter
+- fixed-wing
+- VTOL/hybrid.
+
+For each:
+- aerodynamic concept
+- propulsion
+- control
+- endurance
+- maneuverability
+- launch/landing
+- area coverage
+- payload
+- redundancy concept
+- mission suitability.
+
+Do not claim universal superiority.
+
+====================================================================
+20. DRONE EXPLODED VIEW
+====================================================================
+
+Every component is selectable:
+
+AIRFRAME
+ARM
+MOTOR
+ESC
+PROPELLER
+BATTERY
+POWER MODULE
+FLIGHT CONTROLLER
+IMU
+MAGNETOMETER
+BAROMETER
+GNSS RECEIVER
+ANTENNA
+TELEMETRY
+CONTROLLER
+GIMBAL
+RGB
+LiDAR
+THERMAL
+MULTISPECTRAL
+STORAGE.
+
+For every component:
+- physical location
+- purpose
+- input
+- output
+- operating principle
+- failure modes
+- maintenance considerations
+- survey impact.
+
+====================================================================
+21. AERODYNAMICS FOUNDATION
+====================================================================
+
+Teach:
+air
+pressure
+density
+velocity
+flow
+force
+moment
+thrust.
+
+Four force concepts:
+LIFT
+DRAG
+THRUST
+WEIGHT.
+
+Generic aircraft equations:
+
+L = 1/2 ρV²SC_L
+
+D = 1/2 ρV²SC_D
+
+W = mg
+
+Clearly identify:
+these are educational aerodynamic relationships and do not completely describe multirotor rotor aerodynamics.
+
+====================================================================
+22. MULTIROTOR THRUST
+====================================================================
+
+Explain:
+rotor accelerates air
+→ momentum change
+→ reaction force
+→ thrust.
+
+Hover approximation:
+
+T_total ≈ mg
+
+Climb:
+T_total > mg.
+
+Descent:
+controlled reduction/redistribution of thrust.
+
+Explain actual rotor dynamics are more complex.
+
+====================================================================
+23. FORCE VECTOR LAB
+====================================================================
+
+If total thrust vector T is tilted by θ:
+
+T_vertical ≈ T cosθ
+
+T_horizontal ≈ T sinθ
+
+Show graphically.
+
+Make learner change:
+T
+θ.
+
+See:
+vertical support
+horizontal acceleration.
+
+====================================================================
+24. MOMENT / TORQUE
+====================================================================
+
+Teach:
+force applied at distance from center
+→ moment.
+
+Concept:
+
+τ = r × F
+
+Show:
+motor thrust offset from center of mass
+→ control moment.
+
+Explain aircraft-specific control allocation.
+
+====================================================================
+25. CENTER OF GRAVITY
+====================================================================
+
+Teach:
+- center of mass
+- center of gravity
+- payload shift
+- battery shift.
+
+Simulate:
+payload moved forward.
+
+Show:
+changed balance
+→ controller effort
+→ possible flight/energy implications.
+
+====================================================================
+26. WIND VECTOR LAB
+====================================================================
+
+Vectors:
+airspeed
+wind
+ground velocity.
+
+Show:
+
+V_ground = V_aircraft/air + V_wind
+
+using the selected sign/vector convention.
+
+Allow:
+speed and direction changes.
+
+Calculate:
+ground speed
+track
+crab angle.
+
+====================================================================
+27. CRAB ANGLE
+====================================================================
+
+Show:
+aircraft nose direction
+vs
+ground-track direction.
+
+Explain wind correction.
+
+Teach why:
+heading != course over ground.
+
+====================================================================
+28. PROPELLER LAB
+====================================================================
+
+Teach:
+- diameter
+- pitch
+- blade angle
+- RPM
+- thrust
+- torque
+- efficiency
+- vibration.
+
+Show damaged propeller.
+
+Show:
+vibration
+→ camera movement
+→ blur risk.
+
+====================================================================
+29. MOTOR LAB
+====================================================================
+
+Explain:
+- rotor
+- stator
+- magnets
+- bearings
+- electrical input
+- electromagnetic torque
+- RPM
+- KV.
+
+Teach power:
+
+P ≈ VI
+
+Discuss thermal and efficiency concepts.
+
+====================================================================
+30. ESC LAB
+====================================================================
+
+Explain:
+flight-controller command
+→ ESC
+→ motor.
+
+Teach:
+switching
+commutation concept
+current
+thermal loading
+failure.
+
+====================================================================
+31. MOTOR MIXING
+====================================================================
+
+Show:
+hover
+climb
+pitch
+roll
+yaw.
+
+Motor numbering must be configurable because platforms differ.
+
+====================================================================
+32. FLIGHT CONTROLLER
+====================================================================
+
+Teach:
+- processor
+- firmware
+- sensor input
+- state estimation
+- controller
+- actuator output
+- failsafe.
+
+Create feedback loop animation.
+
+====================================================================
+33. PID LAB
+====================================================================
+
+Show:
+setpoint
+actual
+error
+controller output
+response.
+
+P:
+current error.
+
+I:
+accumulated error.
+
+D:
+rate of error change.
+
+Show:
+overshoot
+settling
+oscillation.
+
+Do not encourage learners to tune real aircraft from simulator settings.
+
+The simulator is educational, not flight-control tuning advice.
+
+====================================================================
+34. BODY FRAME / WORLD FRAME
+====================================================================
+
+Show:
+body axes
+X
+Y
+Z
+
+and world/navigation axes.
+
+Explain:
+roll
+pitch
+yaw.
+
+Make frame transformations visual.
+
+====================================================================
+35. ATTITUDE
+====================================================================
+
+Live 3D:
+roll
+pitch
+yaw.
+
+Show:
+aircraft body
+horizon
+north arrow
+velocity vector.
+
+====================================================================
+36. IMU — MASTER LAB
+====================================================================
+
+IMU = Inertial Measurement Unit.
+
+Explain:
+accelerometer
+gyroscope
+and platform-specific additional sensing if present.
+
+Show:
+raw measurement
+bias
+noise
+filtering
+estimated state.
+
+====================================================================
+37. GYROSCOPE
+====================================================================
+
+Measure angular rate:
+ωx
+ωy
+ωz.
+
+Units:
+deg/s
+rad/s.
+
+Show integration concept.
+
+Explain bias/drift.
+
+====================================================================
+38. ACCELEROMETER
+====================================================================
+
+Explain:
+specific force.
+
+Show gravity contribution.
+
+Teach:
+accelerometer measurement
+vs
+vehicle linear acceleration.
+
+Avoid the oversimplification “accelerometer directly measures tilt.”
+
+====================================================================
+39. INERTIAL DRIFT
+====================================================================
+
+Show:
+small bias
+→ integrated velocity error
+→ integrated position error.
+
+Make the time axis visible.
+
+====================================================================
+40. SENSOR FUSION
+====================================================================
+
+Inputs:
+
+IMU
+GNSS
+magnetometer
+barometer
+optical flow/range sensors where present.
+
+Output:
+estimated:
+position
+velocity
+attitude
+heading
+altitude.
+
+Clearly distinguish:
+raw observation
+vs
+state estimate.
+
+====================================================================
+41. MAGNETOMETER
+====================================================================
+
+Teach:
+Earth magnetic field.
+
+Show 3-axis:
+Mx
+My
+Mz.
+
+Show vector magnitude and direction.
+
+====================================================================
+42. MAGNETIC DIP
+====================================================================
+
+Show horizontal + vertical magnetic field components.
+
+Explain why a 3-axis magnetometer is useful.
+
+====================================================================
+43. COMPASS
+====================================================================
+
+Teach compass heading as a magnetic-field-based heading concept.
+
+Make learner rotate drone.
+
+Show:
+magnetic heading.
+
+====================================================================
+44. COMPASS CALIBRATION
+====================================================================
+
+Explain:
+calibration estimates platform/system-dependent magnetic biases and distortions.
+
+Show:
+
+raw magnetic vectors
+→ offset
+→ distortion
+→ fitted correction
+→ corrected measurement.
+
+====================================================================
+45. HARD-IRON ERROR
+====================================================================
+
+Explain offset.
+
+Concept:
+m_measured = m_true + b
+
+where b is a bias vector.
+
+Show cloud shifted from origin.
+
+====================================================================
+46. SOFT-IRON ERROR
+====================================================================
+
+Show:
+sphere
+→ ellipsoid.
+
+Explain:
+scale
+cross-axis coupling
+orientation effects conceptually.
+
+====================================================================
+47. CALIBRATION DATA COLLECTION
+====================================================================
+
+Generic multi-orientation collection.
+
+Do not claim one universal procedure.
+
+Always show:
+“FOLLOW AIRCRAFT-MANUFACTURER PROCEDURE.”
+
+====================================================================
+48. CALIBRATION LOCATION MATTERS
+====================================================================
+
+Create scenario:
+
+Calibration near steel building.
+
+Calibration “succeeds.”
+
+Then aircraft moves away.
+
+Heading changes.
+
+Explain:
+calibration cannot magically remove every changing external field.
+
+====================================================================
+49. LOCAL MAGNETIC DISTURBANCE
+====================================================================
+
+Show a mine.
+
+Sources:
+excavator
+truck
+power infrastructure
+steel
+electrical equipment.
+
+Create magnetic disturbance heatmap.
+
+====================================================================
+50. LOCAL ATTRACTION
+====================================================================
+
+Explain classical survey meaning.
+
+Show nearby magnetic material causing compass/needle deviation.
+
+Distinguish from magnetic declination.
+
+====================================================================
+51. TRUE NORTH
+====================================================================
+
+Define and visualize local geodetic/true north.
+
+Show:
+Earth
+meridian
+local north direction.
+
+====================================================================
+52. MAGNETIC NORTH
+====================================================================
+
+Show location/time-dependent magnetic north direction.
+
+====================================================================
+53. GRID NORTH
+====================================================================
+
+Show north direction represented by the selected map projection/grid.
+
+====================================================================
+54. MAGNETIC DECLINATION
+====================================================================
+
+Angle between magnetic north and true/geodetic north under the selected convention.
+
+Allow:
+location
+date.
+
+Never hard-code obsolete values.
+
+====================================================================
+55. MERIDIAN CONVERGENCE
+====================================================================
+
+Show:
+geodetic north
+vs
+grid north.
+
+Explain projection geometry.
+
+====================================================================
+56. NORTH REFERENCE ENGINE
+====================================================================
+
+Persistent display:
+
+TRUE NORTH
+MAGNETIC NORTH
+GRID NORTH
+DECLINATION
+CONVERGENCE
+CURRENT HEADING
+CURRENT TRACK.
+
+Allow sign convention configuration.
+
+====================================================================
+57. BEARING / AZIMUTH
+====================================================================
+
+Teach:
+- bearing
+- azimuth
+- reference direction
+- clockwise convention
+- 0–360.
+
+Allow selection:
+true
+magnetic
+grid.
+
+====================================================================
+58. NORTH-CONVERSION ERROR LAB
+====================================================================
+
+Learner is given:
+survey line
+magnetic observation
+declination
+convergence.
+
+They must determine grid/true reference.
+
+Do not let the simulator silently select the sign convention.
+
+====================================================================
+59. HEADING VS COURSE
+====================================================================
+
+Show:
+aircraft nose
+ground track
+wind vector.
+
+Explain:
+compass heading
+vs
+GNSS course over ground.
+
+====================================================================
+60. CRS MASTER LAB
+====================================================================
+
+Teach:
+CRS is not merely “a coordinate.”
+
+It defines how coordinate values are referenced/interpreted.
+
+Include:
+- geographic CRS
+- projected CRS
+- vertical CRS
+- compound CRS
+- engineering/local grids.
+
+====================================================================
+61. DATUM
+====================================================================
+
+Explain:
+horizontal/geodetic datum
+and
+vertical datum.
+
+Include:
+reference ellipsoid
+reference realization
+orientation
+scale
+epoch where relevant.
+
+====================================================================
+62. REFERENCE FRAME / EPOCH
+====================================================================
+
+Introduce the idea that precise reference frames can be time-dependent.
+
+Do not force epoch concepts into basic mode.
+
+Expert mode:
+show:
+reference frame
+epoch
+coordinate velocity concept.
+
+====================================================================
+63. ELLIPSOID
+====================================================================
+
+Teach:
+semi-major axis
+semi-minor axis
+flattening
+eccentricity.
+
+Provide equations in Expert Mode.
+
+====================================================================
+64. GEOID
+====================================================================
+
+Teach:
+gravity-related equipotential reference concept.
+
+Show:
+ellipsoid
+geoid
+terrain.
+
+====================================================================
+65. HEIGHT RELATION
+====================================================================
+
+Show:
+
+h = ellipsoidal height
+H = orthometric height
+N = geoid separation/undulation.
+
+Common conceptual relation:
+
+H ≈ h - N
+
+State sign/model conventions may vary.
+
+====================================================================
+66. UTM
+====================================================================
+
+Teach:
+- zones
+- central meridian
+- Transverse Mercator
+- false easting
+- false northing
+- scale factor
+- hemisphere.
+
+====================================================================
+67. EPSG
+====================================================================
+
+Teach:
+EPSG identifiers identify coordinate-reference definitions.
+
+Educational example:
+WGS 84 / UTM zone 45N
+EPSG:32645
+
+Explicitly state project CRS must be verified.
+
+====================================================================
+68. AXIS ORDER
+====================================================================
+
+Failures:
+latitude/longitude swapped
+Easting/Northing swapped
+X/Y confusion.
+
+====================================================================
+69. UNITS
+====================================================================
+
+Failures:
+degrees vs metres
+feet vs metres
+mm vs m
+cm vs m.
+
+Show spatial consequences.
+
+====================================================================
+70. LOCAL ENGINEERING GRID
+====================================================================
+
+Teach:
+- origin
+- rotation
+- scale
+- local axes
+- false coordinates
+- benchmark.
+
+Show transformation from project CRS to local mine grid.
+
+====================================================================
+71. HEIGHT TYPE DASHBOARD
+====================================================================
+
+Always display:
+value
+height type
+vertical reference
+unit
+source
+quality.
+
+Types:
+ellipsoidal
+orthometric
+RL
+AGL
+home-relative
+pressure-derived.
+
+====================================================================
+72. BENCHMARK
+====================================================================
+
+Show:
+BM
+known RL.
+
+Explain benchmark as a reference point within the adopted vertical control system.
+
+====================================================================
+73. DIFFERENTIAL LEVELLING
+====================================================================
+
+Animated level.
+
+Example:
+
+RL_BM = 524.315 m
+BS = 1.245 m
+
+HI = 525.560 m
+
+IS = 2.110 m
+
+RL = 523.450 m
+
+Show:
+instrument
+line of sight
+staff
+reading
+calculation.
+
+====================================================================
+74. RISE & FALL
+====================================================================
+
+Teach:
+Rise
+Fall
+RL transfer
+arithmetic checks.
+
+====================================================================
+75. TOTAL STATION HEIGHT
+====================================================================
+
+Show:
+station RL
+instrument height
+target/prism height
+slope distance
+vertical angle/zenith-angle convention.
+
+Make convention selectable.
+
+====================================================================
+76. GNSS HEIGHT
+====================================================================
+
+Show:
+E
+N
+h.
+
+Explicitly:
+h != RL automatically.
+
+====================================================================
+77. DRONE ALTITUDE TERMS
+====================================================================
+
+Teach:
+- takeoff-relative altitude
+- AGL
+- orthometric elevation
+- ellipsoidal height
+- home altitude
+- pressure altitude where represented
+- terrain-following height.
+
+====================================================================
+78. AGL
+====================================================================
+
+Concept:
+
+AGL = aircraft elevation - ground elevation
+
+under consistent reference definitions.
+
+====================================================================
+79. TERRAIN FOLLOWING
+====================================================================
+
+Conceptual:
+
+Z_drone(x,y) = Z_ground(x,y) + AGL_target
+
+Show terrain profile and drone.
+
+====================================================================
+80. CAMERA LAB
+====================================================================
+
+Teach:
+- sensor
+- focal length
+- principal point
+- pixel dimensions
+- pixel pitch
+- field of view
+- shutter
+- aperture
+- ISO
+- focus
+- distortion
+- rolling/global shutter.
+
+====================================================================
+81. CAMERA CALIBRATION
+====================================================================
+
+Teach conceptually:
+- focal length
+- principal point
+- distortion
+- pose.
+
+Show calibration optimization.
+
+====================================================================
+82. ROLLING SHUTTER
+====================================================================
+
+Show sequential row acquisition.
+
+Explain motion distortion.
+
+====================================================================
+83. GLOBAL SHUTTER
+====================================================================
+
+Show simultaneous-frame acquisition concept.
+
+Explain relevance to mapping.
+
+====================================================================
+84. MOTION BLUR
+====================================================================
+
+Show:
+ground motion
++
+exposure time
+→ image displacement.
+
+====================================================================
+85. EXPOSURE LAB
+====================================================================
+
+Teach:
+shutter
+ISO
+aperture where supported.
+
+Show:
+underexposure
+normal
+overexposure
+motion blur.
+
+====================================================================
+86. GSD
+====================================================================
+
+Definition:
+Ground Sampling Distance = approximate ground dimension corresponding to an image pixel under specified imaging geometry.
+
+Simplified:
+
+GSD ≈ H × sensor_width / image_width_pixels
+
+Alternative:
+
+GSD ≈ H × pixel_size / focal_length.
+
+====================================================================
+87. GSD CALCULATOR
+====================================================================
+
+Inputs:
+H
+sensor width
+image width
+focal length
+pixel size.
+
+Outputs:
+m/pixel
+cm/pixel
+mm/pixel
+ground footprint.
+
+Include dimensional analysis.
+
+====================================================================
+88. GSD ERROR LAB
+====================================================================
+
+Learner changes:
+height
+camera
+resolution.
+
+Show:
+GSD change
+footprint change
+coverage change
+image requirement.
+
+====================================================================
+89. IMAGE FOOTPRINT
+====================================================================
+
+Camera frustum
+→ ground intersection.
+
+Show width/length.
+
+====================================================================
+90. OVERLAP
+====================================================================
+
+Simplified:
+
+Forward overlap ≈ 1 - spacing/footprint_length.
+
+Side overlap ≈ 1 - line_spacing/footprint_width.
+
+Clearly state real geometry depends on attitude, camera model and terrain.
+
+====================================================================
+91. IMAGE SPACING
+====================================================================
+
+Simplified:
+
+spacing ≈ ground_speed × trigger_interval.
+
+Show the relation.
+
+====================================================================
+92. SURVEY DESIGN
+====================================================================
+
+Mission objective first.
+
+Then:
+area
+accuracy
+GSD
+control
+payload
+flight
+processing
+deliverables.
+
+====================================================================
+93. PAYLOAD LAB
+====================================================================
+
+RGB
+LiDAR
+thermal
+multispectral.
+
+For each:
+principle
+measurement
+output
+strengths
+limitations
+processing
+mining use.
+
+====================================================================
+94. RGB PHOTOGRAMMETRY
+====================================================================
+
+Explain visible imagery as passive observation.
+
+Dependence on:
+texture
+lighting
+overlap
+geometry.
+
+====================================================================
+95. LiDAR
+====================================================================
+
+Explain active ranging.
+
+Simplified:
+
+R ≈ cΔt/2
+
+Combine:
+range
+scanner orientation
+GNSS
+IMU
+time.
+
+→ 3D point.
+
+====================================================================
+96. LiDAR TRAJECTORY
+====================================================================
+
+Teach:
+GNSS + IMU
+→ trajectory.
+
+====================================================================
+97. LiDAR BORESIGHT
+====================================================================
+
+Expert mode:
+sensor frame
+navigation frame
+relative mounting orientation
+boresight calibration concept.
+
+====================================================================
+98. THERMAL
+====================================================================
+
+Teach:
+long-wave infrared
+emission
+emissivity
+background/reflected radiation
+atmospheric effects
+radiometric concept.
+
+====================================================================
+99. MULTISPECTRAL
+====================================================================
+
+Teach:
+band-specific sensing.
+
+Example:
+
+NDVI = (NIR - Red)/(NIR + Red)
+
+State exact band definitions depend on the sensor.
+
+====================================================================
+100. MISSION PLANNER
+====================================================================
+
+Interactive flow:
+
+OBJECTIVE
+→ AIRCRAFT
+→ PAYLOAD
+→ CRS/REFERENCE
+→ CONTROL
+→ AOI
+→ HAZARDS
+→ ALTITUDE
+→ GSD
+→ OVERLAP
+→ SPEED
+→ FLIGHT DIRECTION
+→ TERRAIN FOLLOWING
+→ RTH
+→ BATTERY
+→ REVIEW
+→ VALIDATE.
+
+====================================================================
+101. MINING HAZARDS
+====================================================================
+
+Show:
+HEMM
+power
+blast
+people
+structures
+dust
+wind
+highwalls
+roads
+vegetation
+communications.
+
+====================================================================
+102. PREFLIGHT
+====================================================================
+
+Mandatory checklist:
+aircraft
+propeller
+motor
+battery
+GNSS
+IMU status
+compass
+camera
+storage
+mission
+home point
+RTH
+weather
+wind
+hazards
+control
+GCP
+data.
+
+====================================================================
+103. PREFLIGHT FAILURE
+====================================================================
+
+Inject:
+damaged prop
+low battery
+bad GNSS
+compass anomaly
+empty storage
+wrong mission
+missing GCP.
+
+====================================================================
+104. FLIGHT SIMULATOR
+====================================================================
+
+HUD:
+altitude
+AGL
+heading
+track
+speed
+vertical speed
+roll
+pitch
+yaw
+battery
+GNSS
+RTK
+satellites
+PDOP
+correction
+link
+home distance
+photo count
+line number
+wind.
+
+====================================================================
+105. FREE FLIGHT
+====================================================================
+
+Teach:
+takeoff
+hover
+yaw
+pitch
+roll
+climb
+descent
+landing.
+
+====================================================================
+106. SURVEY FLIGHT
+====================================================================
+
+Automated:
+takeoff
+climb
+stabilize
+line
+capture
+turn
+next line
+capture
+return
+land.
+
+====================================================================
+107. LIVE IMAGE COLLECTION
+====================================================================
+
+Every image:
+filename
+timestamp
+camera position
+height
+heading
+attitude
+GNSS status.
+
+Show image footprints.
+
+====================================================================
+108. FLIGHT INCIDENTS
+====================================================================
+
+- GNSS degradation
+- RTK FLOAT
+- correction loss
+- wind increase
+- battery issue
+- telemetry loss
+- image blur
+- missing line
+- camera failure
+- obstacle.
+
+Learner chooses action.
+
+====================================================================
+109. LANDING
+====================================================================
+
+Return
+→ descend
+→ land
+→ disarm
+→ secure aircraft.
+
+====================================================================
+110. POST-FLIGHT
+====================================================================
+
+Extract:
+images
+logs
+telemetry
+GNSS
+RTK/PPK
+mission
+metadata.
+
+Backup before processing.
+
+====================================================================
+111. DATA LINEAGE
+====================================================================
+
+RAW
+→ COPY
+→ PROCESS
+→ QC
+→ EXPORT
+→ REPORT.
+
+Never silently overwrite source observations.
+
+====================================================================
+112. GCP / CHECK POINTS
+====================================================================
+
+GCP:
+control.
+
+Check Point:
+independent validation.
+
+Show differences.
+
+====================================================================
+113. GCP PLACEMENT
+====================================================================
+
+Simulate:
+good
+clustered
+edge-only
+same-elevation
+poor visibility.
+
+====================================================================
+114. CONTROL NETWORK
+====================================================================
+
+Show:
+benchmark
+primary control
+secondary control
+GCP
+check point.
+
+Explain hierarchy.
+
+====================================================================
+115. PHOTOGRAMMETRY
+====================================================================
+
+Pipeline:
+
+IMAGES
+→ QUALITY
+→ KEYPOINTS
+→ DESCRIPTORS
+→ MATCHES
+→ TIE POINTS
+→ CAMERA POSES
+→ TRIANGULATION
+→ BUNDLE ADJUSTMENT
+→ GCP
+→ OPTIMIZATION
+→ CHECK POINTS
+→ DENSE CLOUD
+→ CLASSIFICATION
+→ DSM
+→ DTM
+→ ORTHOMOSAIC
+→ MESH
+→ CONTOURS
+→ EXPORT.
+
+====================================================================
+116. KEYPOINT
+====================================================================
+
+Detected image feature:
+corner
+edge
+texture
+distinctive structure.
+
+====================================================================
+117. DESCRIPTOR
+====================================================================
+
+Representation of local image appearance for correspondence search.
+
+====================================================================
+118. MATCH
+====================================================================
+
+Candidate correspondence between image features.
+
+====================================================================
+119. TIE POINT
+====================================================================
+
+Matched scene feature observations across overlapping images.
+
+Permanent teaching distinction:
+
+KEYPOINT = DETECTED FEATURE
+
+TIE POINT = MATCHED CORRESPONDENCE/OBSERVATION ACROSS IMAGES.
+
+====================================================================
+120. WRONG MATCH
+====================================================================
+
+Show:
+wrong feature
+→ wrong constraint
+→ alignment degradation.
+
+====================================================================
+121. IMAGE NETWORK
+====================================================================
+
+Images = nodes.
+
+Tie points = connections.
+
+Highlight weak links.
+
+====================================================================
+122. TRIANGULATION
+====================================================================
+
+Camera 1 ray
++
+Camera 2 ray
+→
+3D point.
+
+Add third image.
+
+====================================================================
+123. COLLINEARITY
+====================================================================
+
+Show:
+object point
+image point
+perspective center.
+
+Explain idealized perspective imaging relationship.
+
+====================================================================
+124. CAMERA POSE
+====================================================================
+
+Six degrees:
+X Y Z
+roll pitch yaw.
+
+====================================================================
+125. BUNDLE ADJUSTMENT
+====================================================================
+
+Jointly estimate/adjust:
+camera parameters
+camera poses
+3D points
+observations.
+
+Show optimization.
+
+====================================================================
+126. REPROJECTION ERROR
+====================================================================
+
+Observed:
+(x,y)
+
+Predicted:
+(x_hat,y_hat)
+
+Residual:
+e = [x-x_hat, y-y_hat]
+
+Magnitude:
+sqrt((x-x_hat)^2 + (y-y_hat)^2).
+
+====================================================================
+127. DENSE RECONSTRUCTION
+====================================================================
+
+Sparse cloud
+→ dense cloud.
+
+Show processing time/load conceptually.
+
+====================================================================
+128. POINT CLOUD
+====================================================================
+
+Interactive:
+rotate
+zoom
+clip
+section
+select
+measure
+classify.
+
+====================================================================
+129. POINT-DENSITY LAB
+====================================================================
+
+Show:
+sparse
+medium
+dense.
+
+Explain:
+more points ≠ automatically more accuracy.
+
+====================================================================
+130. POINT-CLOUD CLEANING
+====================================================================
+
+Remove:
+noise
+outliers
+duplicates
+isolated points.
+
+====================================================================
+131. CLASSIFICATION
+====================================================================
+
+Classes:
+ground
+vegetation
+building
+equipment
+road
+stockpile
+bench
+highwall.
+
+====================================================================
+132. TIN
+====================================================================
+
+Points
+→ triangles
+→ surface.
+
+Let learner inspect triangle vertices and elevation.
+
+====================================================================
+133. SURFACE INTERPOLATION
+====================================================================
+
+Explain:
+surface estimation between observations.
+
+Show:
+dense data
+sparse data
+different interpolation behavior.
+
+====================================================================
+134. DSM
+====================================================================
+
+Represent the observed surface including objects represented by the source data.
+
+====================================================================
+135. DTM
+====================================================================
+
+Terrain/ground model after appropriate classification/filtering.
+
+====================================================================
+136. DEM
+====================================================================
+
+Generic digital elevation model terminology.
+
+Explain project/software differences.
+
+====================================================================
+137. VEGETATION ERROR
+====================================================================
+
+Show grass/tree contamination.
+
+Compare:
+raw surface
+classified ground surface.
+
+====================================================================
+138. HIGHWALL
+====================================================================
+
+Show:
+nadir-only survey
+vs
+oblique/complementary capture.
+
+====================================================================
+139. ORTHOMOSAIC
+====================================================================
+
+Raw images
+→ geometric correction/orthorectification
+→ mosaic.
+
+Show:
+seams
+holes
+distortion
+duplicate areas.
+
+====================================================================
+140. 3D MESH
+====================================================================
+
+Point cloud
+→ mesh
+→ texture.
+
+====================================================================
+141. CONTOURS
+====================================================================
+
+Surface
+→ equal-elevation lines.
+
+Change interval.
+
+====================================================================
+142. PROFILE
+====================================================================
+
+Line
+→ distance/elevation graph.
+
+====================================================================
+143. SURFACE DIFFERENCE
+====================================================================
+
+Surface A
+vs
+Surface B.
+
+Show:
+ΔZ.
+
+====================================================================
+144. CUT/FILL
+====================================================================
+
+Display:
+cut
+fill
+no-change.
+
+====================================================================
+145. VOLUME
+====================================================================
+
+Teach:
+volume depends on:
+surface
+boundary
+base/reference
+method
+units
+quality.
+
+====================================================================
+146. TIN VOLUME
+====================================================================
+
+Show triangle-by-triangle contribution.
+
+====================================================================
+147. STOCKPILE
+====================================================================
+
+Define boundary.
+
+Define base.
+
+Generate surface.
+
+Calculate volume.
+
+Validate.
+
+====================================================================
+148. STOCKPILE RECONCILIATION
+====================================================================
+
+Survey A
+vs
+Survey B.
+
+Compute change.
+
+Optionally compare against operational records using an explicit material/density methodology.
+
+Do not convert volume to tonnage automatically.
+
+====================================================================
+149. GIS
+====================================================================
+
+Layers:
+boundary
+pit
+roads
+drains
+stockpile
+dump
+control
+orthomosaic
+DTM
+contours.
+
+====================================================================
+150. CAD
+====================================================================
+
+Simulated:
+CSV/DXF
+→ layers
+→ geometry
+→ elevation
+→ annotations
+→ contours
+→ plan.
+
+====================================================================
+151. MINE MODELLING
+====================================================================
+
+Survey
+→ surface
+→ sections
+→ comparison
+→ decision.
+
+Use neutral examples for ARES Commander, Datamine and Surpac.
+
+====================================================================
+152. QA/QC FRAMEWORK
+====================================================================
+
+FIELD
+CONTROL
+DATA
+PROCESSING
+SURFACE
+MEASUREMENT
+DELIVERY.
+
+Each stage is a gate.
+
+====================================================================
+153. RMSE
+====================================================================
+
+RMSE = sqrt(Σ e_i² / n)
+
+Show:
+horizontal
+vertical
+independent checkpoints.
+
+Never apply invented universal thresholds.
+
+====================================================================
+154. ERROR PROPAGATION
+====================================================================
+
+CONTROL ERROR
+→ MODEL ERROR
+→ SURFACE ERROR
+→ MEASUREMENT ERROR
+→ DECISION IMPACT.
+
+====================================================================
+155. ERROR TYPES
+====================================================================
+
+GROSS
+SYSTEMATIC
+RANDOM.
+
+====================================================================
+156. ERROR LAB
+====================================================================
+
+Cases:
+wrong CRS
+wrong datum
+wrong vertical reference
+wrong north
+wrong declination
+wrong convergence
+compass disturbance
+bad calibration
+wrong antenna height
+RTK float
+poor GCP
+poor overlap
+blur
+vegetation
+highwall
+wrong units
+wrong base
+wrong boundary
+missing images
+wrong metadata.
+
+For every case:
+
+CAUSE
+→ SYMPTOM
+→ IMPACT
+→ DETECTION
+→ CORRECTION
+→ PREVENTION.
+
+====================================================================
+157. MASTER “WHY?” ENGINE
+====================================================================
+
+Every important parameter includes:
+
+WHY?
+
+For:
+GSD
+altitude
+overlap
+GCP
+check point
+RTK
+compass
+CRS
+geoid
+height
+classification
+volume
+base
+boundary
+camera calibration.
+
+====================================================================
+158. MASTER “WHAT IF?” ENGINE
+====================================================================
+
+Allow learners to alter:
+- altitude
+- wind
+- GSD
+- speed
+- overlap
+- trigger
+- focal length
+- GCP placement
+- CRS
+- vertical reference
+- classification.
+
+Show downstream consequences.
+
+====================================================================
+159. DATA PROVENANCE
+====================================================================
+
+Each output must reference:
+source data
+project
+version
+processing step
+software
+settings
+operator
+time.
+
+====================================================================
+160. PROJECT VERSIONING
+====================================================================
+
+Project:
+v01
+v02
+v03.
+
+Raw dataset immutable concept.
+
+====================================================================
+161. METADATA
+====================================================================
+
+For images:
+filename
+timestamp
+camera
+focal length
+image dimensions
+GNSS position
+height
+attitude
+heading
+flight line
+RTK state where available
+project
+source.
+
+For products:
+CRS
+vertical reference
+GCP
+checkpoint
+software
+processing parameters
+date
+operator
+limitations.
+
+====================================================================
+162. FORMULA ENGINE
+====================================================================
+
+Create searchable formula library.
+
+Every formula:
+definition
+variables
+units
+substitution
+result
+assumptions
+limitations.
+
+====================================================================
+163. UNIT ENGINE
+====================================================================
+
+Support:
+mm
+cm
+m
+km
+ft
+in
+deg
+rad
+m/s
+km/h
+m²
+ha
+m³
+kg
+N
+Pa.
+
+Make unit mismatch visible.
+
+====================================================================
+164. ANGLE ENGINE
+====================================================================
+
+Support:
+heading
+yaw
+pitch
+roll
+bearing
+azimuth
+vertical angle
+zenith angle
+declination
+convergence.
+
+====================================================================
+165. COORDINATE ENGINE
+====================================================================
+
+Every coordinate includes:
+X/Easting
+Y/Northing
+Z
+CRS
+datum/reference
+vertical reference
+units
+epoch if relevant
+source
+quality.
+
+====================================================================
+166. HEIGHT ENGINE
+====================================================================
+
+Every height includes:
+value
+type
+reference
+units
+source
+quality.
+
+====================================================================
+167. SIMULATED DATA TAGGING
+====================================================================
+
+Clearly label:
+SIMULATED TRAINING DATA
+
+and:
+
+SIMULATED WORKFLOW.
+
+Never imply synthetic values are real mine observations.
+
+====================================================================
+168. SOURCE-AWARE KNOWLEDGE
+====================================================================
+
+Use authoritative sources when exact/current information matters.
+
+Maintain:
+source URL/reference
+source title
+version
+date checked
+jurisdiction
+scope.
+
+For proprietary systems:
+do not invent UI.
+
+Use:
+“SIMULATED WORKFLOW — NOT OFFICIAL SOFTWARE UI.”
+
+====================================================================
+169. SOFTWARE MODULES
+====================================================================
+
+Teach the role of:
+Agisoft Metashape
+AereoCloud
+ArcGIS Pro
+QGIS
+ARES Commander
+Datamine
+Surpac.
+
+The app is manufacturer/software neutral unless exact documented behavior is supplied.
+
+====================================================================
+170. DATA FORMAT LAB
+====================================================================
+
+Teach:
+CSV
+DXF
+DWG
+KML
+KMZ
+GeoTIFF
+LAS
+LAZ
+GeoPackage
+Shapefile
+JSON.
+
+For each:
+what it stores
+common use
+limitations
+CRS metadata
+interoperability.
+
+====================================================================
+171. IMPORT/EXPORT LAB
+====================================================================
+
+Simulate:
+
+CSV
+→ GIS
+→ CAD
+
+GeoTIFF
+→ GIS
+
+LAS/LAZ
+→ point cloud
+
+KML/KMZ
+→ visualization
+
+DXF
+→ CAD.
+
+Show loss of information when exporting between formats.
+
+====================================================================
+172. DIGITAL TWIN DATA LINEAGE
+====================================================================
+
+Every product should be traceable to the original observation.
+
+====================================================================
+173. REPORT GENERATOR
+====================================================================
+
+Create:
+survey summary
+mission
+aircraft
+payload
+control
+CRS
+vertical reference
+GSD
+overlap
+image count
+GCP
+checkpoints
+processing
+DSM
+DTM
+orthomosaic
+volume
+QC
+limitations.
+
+====================================================================
+174. FIELD NOTEBOOK
+====================================================================
+
+Record:
+time
+location
+operator
+weather
+equipment
+observations
+anomalies
+photos
+notes.
+
+====================================================================
+175. TRAINER DASHBOARD
+====================================================================
+
+Trainer can:
+- select mine
+- select scenario
+- inject fault
+- pause
+- reveal explanation
+- display correct method
+- switch difficulty
+- reset
+- show learner mistakes.
+
+====================================================================
+176. LEARNER ANALYTICS
+====================================================================
+
+Track competencies independently:
+
+aircraft
+aerodynamics
+flight control
+IMU
+compass
+navigation
+geodesy
+CRS
+height
+GNSS
+RTK/PPK
+mission planning
+camera
+GSD
+overlap
+photogrammetry
+GCP
+point cloud
+DTM
+LiDAR
+GIS
+CAD
+volume
+QA/QC
+engineering judgement.
+
+====================================================================
+177. ASSESSMENT
+====================================================================
+
+Question types:
+- component identification
+- drag labels
+- flight control
+- calculation
+- GSD
+- height/RL
+- coordinate diagnosis
+- north-reference diagnosis
+- compass-error diagnosis
+- GCP placement
+- overlap diagnosis
+- tie-point interpretation
+- DSM/DTM interpretation
+- volume calculation
+- engineering decision.
+
+====================================================================
+178. COMPETENCY PROFILE
+====================================================================
+
+Show:
+- demonstrated
+- developing
+- needs practice.
+
+Avoid making competence a meaningless single number.
+
+====================================================================
+179. BEGINNER/EXPERT SWITCH
+====================================================================
+
+Beginner:
+visual.
+
+Expert:
+equations
+logs
+residuals
+reference frames
+sensor data
+metadata
+processing settings.
+
+====================================================================
+180. “MICROSCOPE MODE”
+====================================================================
+
+Any animation can be slowed down to:
+1×
+0.5×
+0.1×
+single-step.
+
+Learner can freeze the exact moment:
+- propeller changes
+- IMU measurement changes
+- camera trigger occurs
+- tie point appears
+- triangle forms.
+
+====================================================================
+181. “X-RAY MODE”
+====================================================================
+
+Allow seeing internal information:
+- sensor readings
+- motor outputs
+- controller state
+- GNSS state
+- image metadata
+- camera pose
+- point-cloud class.
+
+====================================================================
+182. “CAUSE & EFFECT” MODE
+====================================================================
+
+Select a parameter.
+
+The UI highlights all downstream systems affected.
+
+Example:
+CHANGE ALTITUDE
+
+→ GSD
+→ footprint
+→ overlap
+→ images
+→ processing
+→ coverage
+→ processing load.
+
+====================================================================
+183. “TRACE RESULT BACKWARD”
+====================================================================
+
+Start from:
+stockpile volume.
+
+Click backward:
+
+VOLUME
+→ SURFACE
+→ POINT CLOUD
+→ IMAGES
+→ FLIGHT
+→ MISSION
+→ CONTROL.
+
+This teaches provenance and troubleshooting.
+
+====================================================================
+184. “TRACE RESULT FORWARD”
+====================================================================
+
+Start with:
+GCP coordinate.
+
+Show:
+control
+→ processing
+→ surface
+→ volume
+→ report.
+
+====================================================================
+185. PROCUREMENT CASE STUDY
+====================================================================
+
+Learner chooses aircraft + payload for:
+100 ha mine.
+
+System checks:
+survey objective
+terrain
+coverage
+data
+processing
+budget.
+
+====================================================================
+186. STOCKPILE CASE STUDY
+====================================================================
+
+Learner performs:
+planning
+GCP
+flight
+processing
+volume
+QC.
+
+====================================================================
+187. PIT PROGRESS CASE STUDY
+====================================================================
+
+Compare:
+month A
+month B.
+
+Generate:
+progress
+cut/fill
+sections
+volume.
+
+====================================================================
+188. HIGHWALL CASE STUDY
+====================================================================
+
+Teach:
+coverage limitations
+oblique imagery
+complementary observations.
+
+====================================================================
+189. HAUL ROAD CASE
+====================================================================
+
+Corridor planning:
+alignment
+profile
+cross section
+drain
+surface.
+
+====================================================================
+190. ENVIRONMENTAL CASE
+====================================================================
+
+RGB/multispectral/terrain data where appropriate.
+
+====================================================================
+191. EMERGENCY CASE
+====================================================================
+
+Rapid resurvey.
+
+Learner must reassess:
+objective
+hazards
+control
+mission
+aircraft
+payload.
+
+====================================================================
+192. FINAL SUPER-SIMULATION
+====================================================================
+
+Scenario:
+
+“Perform a monthly pit-progress and stockpile survey.”
+
+No hints initially.
+
+Learner must:
+1. define objective
+2. choose aircraft
+3. choose payload
+4. verify CRS
+5. establish/verify control
+6. plan GCP/check points
+7. assess mine hazards
+8. design mission
+9. calculate GSD
+10. review overlap
+11. preflight
+12. fly
+13. monitor telemetry
+14. land
+15. preserve raw data
+16. process
+17. inspect alignment
+18. inspect tie points
+19. apply control
+20. inspect residuals
+21. generate dense cloud
+22. classify
+23. create DSM/DTM
+24. create orthomosaic
+25. create contours
+26. create sections
+27. calculate volume
+28. compare previous survey
+29. perform QC
+30. issue/reject/reprocess/resurvey.
+
+====================================================================
+193. SUPER-SIMULATION SCORE LOGIC
+====================================================================
+
+Track:
+unsafe decisions
+wrong reference use
+data loss
+poor mission design
+poor GCP
+processing decisions
+QC decisions.
+
+Do not reward speed over engineering correctness.
+
+====================================================================
+194. FAILURE INJECTION
+====================================================================
+
+Trainer/system can inject:
+- wrong CRS
+- wrong north
+- compass disturbance
+- RTK loss
+- battery degradation
+- poor overlap
+- blurred images
+- wrong GCP
+- bad checkpoint
+- vegetation
+- missing line
+- wrong base
+- wrong units.
+
+====================================================================
+195. RECOVERY
+====================================================================
+
+Learner must be able to:
+pause
+replan
+reflight
+resurvey
+reprocess
+reclassify
+recalculate.
+
+====================================================================
+196. SAFETY BOUNDARY
+====================================================================
+
+The application is training/simulation.
+
+It must not be represented as:
+- an autonomous flight approval system
+- a legal compliance guarantee
+- a manufacturer-certified simulator
+- a substitute for operator qualification
+- a substitute for site-specific SOPs.
+
+====================================================================
+197. REGULATORY ARCHITECTURE
+====================================================================
+
+Keep regulatory information modular and jurisdiction-aware.
+
+For each rule:
+jurisdiction
+source
+publication/version
+effective date where available
+last verified date.
+
+Never hard-code a potentially outdated legal statement into the teaching engine.
+
+====================================================================
+198. SECURITY
+====================================================================
+
+Support:
+- synthetic training data by default
+- local-only mode
+- project access controls where needed
+- backup
+- audit log
+- safe file validation
+- no unnecessary telemetry upload
+- no sensitive mine data in public repository.
+
+====================================================================
+199. PUBLIC GITHUB REPOSITORY
+====================================================================
+
+The open-source repository must never contain:
+- real mine coordinates
+- actual mine operational data
+- proprietary drone logs
+- private company documents
+- private imagery
+- private credentials
+- API keys
+- personal information
+- restricted datasets.
+
+Use:
+synthetic mine
+synthetic images
+synthetic coordinates
+synthetic logs.
+
+====================================================================
+200. REPOSITORY STRUCTURE
+====================================================================
+
+Suggested:
+
+/
+├── .github/
+│   ├── workflows/
+│   ├── ISSUE_TEMPLATE/
+│   └── PULL_REQUEST_TEMPLATE.md
+├── public/
+│   ├── assets/
+│   ├── models/
+│   ├── terrain/
+│   ├── textures/
+│   └── sample-data/
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── modules/
+│   │   ├── procurement/
+│   │   ├── aircraft/
+│   │   ├── aerodynamics/
+│   │   ├── flight-control/
+│   │   ├── imu/
+│   │   ├── compass/
+│   │   ├── geodesy/
+│   │   ├── gnss/
+│   │   ├── camera/
+│   │   ├── mission/
+│   │   ├── flight/
+│   │   ├── data/
+│   │   ├── photogrammetry/
+│   │   ├── point-cloud/
+│   │   ├── terrain/
+│   │   ├── lidar/
+│   │   ├── thermal/
+│   │   ├── multispectral/
+│   │   ├── gis/
+│   │   ├── cad/
+│   │   ├── mining/
+│   │   ├── qaqc/
+│   │   └── assessment/
+│   ├── engine/
+│   │   ├── simulation/
+│   │   ├── geometry/
+│   │   ├── geodesy/
+│   │   ├── photogrammetry/
+│   │   ├── terrain/
+│   │   ├── telemetry/
+│   │   └── provenance/
+│   ├── data/
+│   ├── styles/
+│   └── utils/
+├── docs/
+├── scripts/
+├── tests/
+├── LICENSE
+├── README.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── CODE_OF_CONDUCT.md
+└── package.json.
+
+====================================================================
+201. RECOMMENDED WEB STACK
+====================================================================
+
+Preferred:
+React
+TypeScript
+Vite or equivalent frontend toolchain
+Three.js
+React Three Fiber
+WebGL
+GSAP or equivalent timeline engine
+MapLibre/OpenLayers/Cesium as appropriate
+Web Workers
+IndexedDB.
+
+Use a static-hosting-compatible architecture.
+
+Do not require a backend for the core educational simulator.
+
+====================================================================
+202. GITHUB DEPLOYMENT MODEL
+====================================================================
+
+The default application should be buildable as a static web app.
+
+Provide:
+npm install
+npm run dev
+npm run build
+npm run preview.
+
+The production build should be deployable to:
+GitHub Pages or another static hosting service.
+
+Keep URLs/asset paths compatible with repository deployment.
+
+====================================================================
+203. PWA / INSTALLABILITY
+====================================================================
+
+Where practical:
+- installable PWA
+- offline cache
+- local datasets
+- local progress
+- service worker
+- update notification.
+
+Do not cache sensitive data automatically.
+
+====================================================================
+204. PERFORMANCE ARCHITECTURE
+====================================================================
+
+Use:
+- instancing
+- LOD
+- progressive loading
+- point-cloud decimation
+- tiled terrain
+- Web Workers
+- GPU rendering
+- lazy-loaded modules.
+
+====================================================================
+205. ACCESSIBILITY
+====================================================================
+
+Provide:
+- keyboard support
+- labels
+- high contrast
+- subtitles
+- text equivalents
+- pause
+- slow mode
+- step mode
+- reduced-motion mode.
+
+====================================================================
+206. DATA-DRIVEN CONTENT ENGINE
+====================================================================
+
+Do not hard-code every lesson into UI.
+
+Use schemas for:
+
+Drone
+Component
+Sensor
+Payload
+Mission
+Hazard
+Failure
+Scenario
+Formula
+Coordinate
+Height
+Image
+GCP
+Checkpoint
+PointCloud
+Surface
+ProcessingStage
+Assessment
+Deliverable
+SourceReference.
+
+====================================================================
+207. SCENARIO ENGINE
+====================================================================
+
+Each scenario has:
+
+id
+title
+objective
+environment
+starting_state
+allowed_actions
+parameters
+events
+failures
+expected_reasoning
+outcomes
+grading_rules
+references.
+
+====================================================================
+208. PHYSICS ENGINE
+====================================================================
+
+The simulator should use simplified educational models where full CFD or
+real autopilot dynamics would be inappropriate.
+
+Models may include:
+- thrust/weight
+- force vectors
+- wind vectors
+- attitude
+- battery energy
+- motor output
+- image capture.
+
+Clearly label:
+SIMPLIFIED TRAINING MODEL.
+
+====================================================================
+209. GEODESY ENGINE
+====================================================================
+
+Implement educational/reference-safe calculations for:
+- bearing/azimuth
+- coordinate differences
+- height relationships
+- unit transformations
+- simplified UTM demonstrations
+- local-grid concepts.
+
+Do not silently assume a project CRS.
+
+====================================================================
+210. PHOTOGRAMMETRY ENGINE
+====================================================================
+
+At minimum simulate:
+- image graph
+- feature detection
+- matching
+- tie points
+- camera poses
+- triangulation
+- sparse cloud
+- dense cloud abstraction
+- reprojection residuals.
+
+If actual numerical photogrammetry is implemented, document algorithms and limitations.
+
+====================================================================
+211. POINT-CLOUD ENGINE
+====================================================================
+
+Support educational point clouds.
+
+Functions:
+- load
+- display
+- color
+- classify
+- clip
+- measure
+- section.
+
+====================================================================
+212. TERRAIN ENGINE
+====================================================================
+
+Support:
+- TIN
+- raster surface
+- DSM
+- DTM
+- contour
+- profile
+- difference.
+
+====================================================================
+213. VOLUME ENGINE
+====================================================================
+
+Input:
+surface
+boundary
+base/reference
+units.
+
+Output:
+volume
+area
+cut/fill
+difference.
+
+Maintain method metadata.
+
+====================================================================
+214. GIS ENGINE
+====================================================================
+
+Support:
+layers
+CRS
+raster
+vector
+measurement
+map
+query.
+
+====================================================================
+215. CAD ENGINE
+====================================================================
+
+Support educational:
+points
+lines
+polylines
+labels
+layers
+elevation
+export.
+
+====================================================================
+216. TESTING
+====================================================================
+
+Every mathematical engine requires:
+- unit tests
+- boundary tests
+- known-value tests
+- invalid-input tests.
+
+Examples:
+GSD
+bearing
+height
+RMSE
+volume
+coordinate conversions.
+
+====================================================================
+217. VISUAL REGRESSION
+====================================================================
+
+Test:
+3D drone
+compass
+north arrows
+CRS map
+point cloud
+DTM
+orthomosaic
+flight path.
+
+====================================================================
+218. SIMULATION TESTS
+====================================================================
+
+Test complete journeys:
+mission start
+→ flight
+→ failure
+→ recovery
+→ landing
+→ processing
+→ QC.
+
+====================================================================
+219. DATA VALIDATION
+====================================================================
+
+Synthetic datasets should have:
+known ground truth
+known expected outputs
+known failure conditions.
+
+Use these as automated regression tests.
+
+====================================================================
+220. TRUTH DATASET
+====================================================================
+
+Maintain a small synthetic “golden dataset” containing:
+- known control
+- known GCP
+- checkpoints
+- known terrain
+- known volume
+- synthetic imagery
+- synthetic trajectory.
+
+Do not publish sensitive data.
+
+====================================================================
+221. FORMULA AUDIT
+====================================================================
+
+Before release verify:
+formula
+units
+variable definitions
+sign conventions
+rounding
+reference assumptions.
+
+====================================================================
+222. REFERENCE AUDIT
+====================================================================
+
+Every exact technical claim requiring external authority should have:
+source
+date
+scope.
+
+====================================================================
+223. DOCUMENTATION
+====================================================================
+
+README:
+purpose
+features
+screenshots
+run instructions
+license
+credits.
+
+docs:
+architecture
+modules
+mathematics
+data schemas
+sources
+contributing.
+
+====================================================================
+224. CREDIT REQUIREMENT
+====================================================================
+
+The application must visibly credit:
+
+“Created / initiated by MD Salim Ansari”
+
+Use this credit in:
+- README
+- About page
+- footer
+- documentation
+- application metadata
+- release notes/template.
+
+Do not use the credit to imply ownership of third-party software or datasets.
+
+====================================================================
+225. LICENSE
+====================================================================
+
+Use the standard MIT License.
+
+Copyright line:
+
+Copyright (c) 2026 MD Salim Ansari
+
+The repository may contain third-party libraries and assets under their own
+licenses. Do not replace their licenses with the project MIT license.
+
+Third-party notices must remain intact.
+
+====================================================================
+226. OPEN-SOURCE POLICY
+====================================================================
+
+Contributions welcome.
+
+Require contributors to:
+- avoid confidential mine data
+- avoid proprietary logs
+- avoid copyrighted assets without permission
+- preserve attribution
+- document technical claims
+- provide tests for new mathematical functions where appropriate.
+
+====================================================================
+227. THIRD-PARTY ASSET POLICY
+====================================================================
+
+For every external:
+model
+texture
+icon
+font
+dataset
+image
+library
+
+record:
+source
+license
+author
+URL
+usage permission.
+
+Do not commit unknown-license assets.
+
+====================================================================
+228. DOCUMENTATION OF SIMULATION LIMITATIONS
+====================================================================
+
+Every simulator should include:
+“This is an educational simulation. Actual aircraft, sensors, software,
+regulations and survey results depend on the platform, environment,
+methodology and project requirements.”
+
+====================================================================
+229. FIELD-SAFETY LANGUAGE
+====================================================================
+
+Do not present simulated flight behavior as guaranteed real-aircraft behavior.
+
+For operational questions:
+follow:
+- manufacturer instructions
+- organizational SOP
+- mine safety system
+- applicable law/regulation
+- competent supervision.
+
+====================================================================
+230. SOFTWARE-SPECIFIC LIMITATIONS
+====================================================================
+
+When showing:
+ARES Commander
+Datamine
+Surpac
+Agisoft Metashape
+AereoCloud
+ArcGIS Pro
+QGIS
+
+Use:
+generic workflow
+or
+verified screenshots/documentation.
+
+Never fabricate an interface.
+
+====================================================================
+231. THE “NOT AUTOMATICALLY ACCURATE” LESSON
+====================================================================
+
+Repeated throughout:
+
+GNSS position
+≠ automatically survey truth.
+
+GNSS height
+≠ automatically RL.
+
+Compass calibration
+≠ automatically correct heading everywhere.
+
+Image
+≠ automatically map.
+
+Keypoint
+≠ automatically tie point.
+
+Point cloud
+≠ automatically DTM.
+
+Orthomosaic
+≠ automatically accurate.
+
+Volume
+≠ automatically correct.
+
+Software result
+≠ automatically validated.
+
+====================================================================
+232. THE “ASK BEFORE CALCULATING” ENGINE
+====================================================================
+
+Before the application calculates:
+bearing
+height
+volume
+distance
+coordinate
+GSD
+
+it asks the learner for the required reference assumptions.
+
+Example:
+“What is this bearing referenced to?”
+
+Example:
+“What height type is this value?”
+
+Example:
+“What CRS are these coordinates in?”
+
+This is a core teaching mechanism.
+
+====================================================================
+233. THE “SHOW YOUR WORK” CALCULATOR
+====================================================================
+
+Do not only display:
+Result = 123.45.
+
+Display:
+
+INPUTS
+→ UNIT CONVERSION
+→ FORMULA
+→ SUBSTITUTION
+→ CALCULATION
+→ RESULT
+→ ERROR/ASSUMPTIONS
+→ ENGINEERING INTERPRETATION.
+
+====================================================================
+234. DIMENSIONAL ANALYSIS
+====================================================================
+
+Show units under every quantity.
+
+Flag:
+m × mm / pixel
+
+until converted consistently.
+
+====================================================================
+235. SIGN CONVENTION PANEL
+====================================================================
+
+Before calculations involving:
+declination
+convergence
+vertical angle
+azimuth
+bearing
+
+display:
+CURRENT CONVENTION.
+
+====================================================================
+236. METADATA-FIRST UX
+====================================================================
+
+Whenever a coordinate/height/product is opened, show its metadata before its
+numeric value.
+
+This trains the learner to never trust undocumented numbers.
+
+====================================================================
+237. “WHY DOES THE MINE MOVE?” EXERCISE
+====================================================================
+
+Start with apparently correct drawing.
+
+Then change:
+CRS
+UTM zone
+axis order
+units
+datum.
+
+Learner diagnoses displacement.
+
+====================================================================
+238. “WHY IS THE RL WRONG?” EXERCISE
+====================================================================
+
+Potential causes:
+GNSS ellipsoid treated as RL
+wrong geoid
+wrong vertical datum
+wrong benchmark
+wrong antenna height
+wrong prism/target height
+wrong vertical angle
+wrong units.
+
+====================================================================
+239. “WHY IS THE COMPASS WRONG?” EXERCISE
+====================================================================
+
+Evidence:
+calibration report
+field environment
+known line
+magnetic model
+vehicle proximity
+payload configuration.
+
+Learner diagnoses:
+declination
+local disturbance
+calibration
+hardware/configuration
+reference mismatch.
+
+====================================================================
+240. “WHY IS THE VOLUME WRONG?” EXERCISE
+====================================================================
+
+Potential:
+boundary
+base
+surface
+vegetation
+date
+CRS
+units
+classification
+missing coverage.
+
+====================================================================
+241. “WHY DID PHOTOGRAMMETRY FAIL?” EXERCISE
+====================================================================
+
+Potential:
+low overlap
+blur
+poor texture
+glare
+missing line
+weak network
+wrong camera settings
+poor control
+bad geometry.
+
+====================================================================
+242. “ORTHO LOOKS PERFECT” EXERCISE
+====================================================================
+
+Beautiful map.
+
+Then:
+independent checkpoints fail.
+
+Learner must understand visual quality versus survey validation.
+
+====================================================================
+243. “SMOOTH DTM” EXERCISE
+====================================================================
+
+Smooth surface.
+
+Then:
+vegetation contamination revealed.
+
+====================================================================
+244. “FOLLOW THE EVIDENCE” EXERCISE
+====================================================================
+
+Given only final volume.
+
+Learner traces:
+volume
+→ surface
+→ data
+→ control
+→ mission.
+
+====================================================================
+245. “ENGINEERING DECISION GATE”
+====================================================================
+
+Final question:
+
+Can this result support the intended decision?
+
+Choices:
+- issue
+- reprocess
+- resurvey
+- issue with limitations
+- reject.
+
+Learner must provide evidence-based reasoning.
+
+====================================================================
+246. FINAL OUTPUT GENERATOR
+====================================================================
+
+Generate:
+orthomosaic
+DSM
+DTM
+contours
+profile
+sections
+volume
+change map
+3D model
+GIS layers
+CAD layers
+QC summary
+metadata
+report.
+
+====================================================================
+247. FINAL MINE SURVEY DASHBOARD
+====================================================================
+
+Show:
+
+MISSION STATUS
+CONTROL STATUS
+GNSS STATUS
+IMAGE QUALITY
+GCP STATUS
+CHECKPOINT STATUS
+ALIGNMENT
+POINT CLOUD
+DTM
+ORTHOMOSAIC
+VOLUME
+QA/QC
+DELIVERABLE STATUS.
+
+====================================================================
+248. FUTURE AI LAYER
+====================================================================
+
+Optional AI assistant inside the application.
+
+Learner can ask:
+“What is wrong here?”
+
+The AI should answer using:
+current simulation state
+available evidence
+lesson knowledge
+selected project data.
+
+It must not hallucinate unknown facts.
+
+For uncertain diagnosis:
+state uncertainty and request the relevant measurement.
+
+====================================================================
+249. AI TUTOR — SOCRATIC MODE
+====================================================================
+
+Instead of immediately giving the answer:
+
+Ask:
+“What reference is the compass using?”
+
+“What does the GNSS height represent?”
+
+“Are these points independent checkpoints?”
+
+“What does the point cloud contain?”
+
+“What is the base surface?”
+
+Lead the learner to the answer.
+
+====================================================================
+250. AI TUTOR — EXPERT MODE
+====================================================================
+
+Explain:
+- mathematical relationships
+- assumptions
+- error sources
+- alternative methods
+- trade-offs.
+
+====================================================================
+251. AI TUTOR — FIELD MODE
+====================================================================
+
+Use concise field language.
+
+Example:
+“Stop. RTK is FLOAT and your control requirement has not been satisfied.
+What evidence do you have before continuing?”
+
+====================================================================
+252. FUTURE SIMULATION API
+====================================================================
+
+Create stable internal interfaces so future modules can plug in:
+
+new aircraft
+new payload
+new sensors
+new mines
+new datasets
+new formulas
+new scenarios.
+
+====================================================================
+253. FUTURE 3D DATA
+====================================================================
+
+Architect for:
+- large point clouds
+- tiled terrain
+- photogrammetric datasets
+- LiDAR trajectories
+- 3D meshes.
+
+====================================================================
+254. FUTURE HARDWARE INTEGRATION
+====================================================================
+
+Do not require hardware now.
+
+But expose abstract interfaces for future:
+- telemetry
+- GNSS receiver
+- flight controller
+- simulator
+- controller.
+
+Never connect to a real aircraft automatically.
+
+====================================================================
+255. FUTURE DIGITAL SURVEY ASSISTANT
+====================================================================
+
+Potential later module:
+
+USER:
+“Survey this stockpile.”
+
+System asks:
+objective
+output
+control
+payload
+GSD
+mission
+QC.
+
+But the learner must remain the decision-maker.
+
+====================================================================
+256. FINAL LEARNING ARC
+====================================================================
+
+The learner progresses:
+
+STAGE 1
+I can name it.
+
+STAGE 2
+I can explain it.
+
+STAGE 3
+I can operate it.
+
+STAGE 4
+I can calculate it.
+
+STAGE 5
+I can diagnose it.
+
+STAGE 6
+I can validate it.
+
+STAGE 7
+I can defend the engineering result.
+
+====================================================================
+257. MASTER GOLDEN PRINCIPLES
+====================================================================
+
+1. Understand the objective before choosing the equipment.
+2. Understand the reference before trusting the coordinate.
+3. Understand the height type before trusting the elevation.
+4. Calibrate sensors according to applicable manufacturer procedure.
+5. Calibration does not eliminate environmental disturbance.
+6. Magnetic north is not true north.
+7. Grid north is not automatically true north.
+8. CRS metadata belongs with the coordinate.
+9. GSD is a geometric relationship, not just a number in software.
+10. Overlap creates the observational redundancy needed for image matching.
+11. A keypoint is not automatically a tie point.
+12. A tie point is not a GCP.
+13. A GCP is not an independent checkpoint.
+14. More points do not automatically mean more accuracy.
+15. A visually beautiful model can still fail independent QC.
+16. A point cloud is not automatically terrain.
+17. A smooth DTM can be wrong.
+18. Volume requires explicit surfaces, boundaries, reference/base and methodology.
+19. Raw observations and metadata are evidence.
+20. Every engineering result requires traceability.
+21. Simulation is not certification.
+22. Software is a tool; engineering judgement remains essential.
+
+====================================================================
+258. FINAL APPLICATION TAGLINE
+====================================================================
+
+“FROM A DRONE ON THE MINE TO A DEFENSIBLE ENGINEERING DECISION.”
+
+Optional secondary line:
+
+“SEE IT. FLY IT. MEASURE IT. PROCESS IT. VERIFY IT.”
+
+====================================================================
+259. BUILD ORDER — FUTURE-READY
+====================================================================
+
+PHASE 01
+Repository + design system.
+
+PHASE 02
+Home + virtual mine.
+
+PHASE 03
+Knowledge graph.
+
+PHASE 04
+Procurement.
+
+PHASE 05
+Receiving/inspection/maintenance.
+
+PHASE 06
+Drone anatomy.
+
+PHASE 07
+Aerodynamics.
+
+PHASE 08
+Propulsion.
+
+PHASE 09
+Flight control.
+
+PHASE 10
+IMU/sensor fusion.
+
+PHASE 11
+Compass/magnetic field/calibration.
+
+PHASE 12
+North references.
+
+PHASE 13
+Geodesy/CRS/datum/UTM.
+
+PHASE 14
+Height/geoid/RL.
+
+PHASE 15
+GNSS.
+
+PHASE 16
+RTK/PPK/CORS/NTRIP.
+
+PHASE 17
+Camera.
+
+PHASE 18
+GSD/footprint/overlap.
+
+PHASE 19
+Payloads.
+
+PHASE 20
+Mission planner.
+
+PHASE 21
+Preflight.
+
+PHASE 22
+Flight simulator.
+
+PHASE 23
+Post-flight/data.
+
+PHASE 24
+GCP/checkpoints.
+
+PHASE 25
+Photogrammetry.
+
+PHASE 26
+Keypoint/tie-point lab.
+
+PHASE 27
+Triangulation/bundle.
+
+PHASE 28
+Point cloud.
+
+PHASE 29
+TIN/DSM/DTM.
+
+PHASE 30
+Orthomosaic/mesh/contours.
+
+PHASE 31
+LiDAR.
+
+PHASE 32
+Thermal/multispectral.
+
+PHASE 33
+GIS/CAD.
+
+PHASE 34
+Mine modelling.
+
+PHASE 35
+Volume/change detection.
+
+PHASE 36
+QA/QC.
+
+PHASE 37
+Error laboratory.
+
+PHASE 38
+Case studies.
+
+PHASE 39
+Super simulation.
+
+PHASE 40
+AI tutor.
+
+PHASE 41
+Trainer mode.
+
+PHASE 42
+Offline/PWA.
+
+PHASE 43
+Performance/accessibility.
+
+PHASE 44
+Automated testing.
+
+PHASE 45
+Open-source release.
+
+====================================================================
+260. DEVELOPMENT RULE FOR THE CODING AI
+====================================================================
+
+Do NOT attempt the entire application in one prompt execution.
+
+At the beginning of each phase:
+1. inspect existing code
+2. identify reusable components
+3. identify data dependencies
+4. implement module
+5. write tests
+6. run/build
+7. inspect visually
+8. document
+9. only then continue.
+
+Never remove working functionality to simplify a later phase.
+
+Never replace technical simulation with decorative animation.
+
+Never silently change coordinate reference assumptions.
+
+Never overwrite raw sample datasets.
+
+====================================================================
+261. DEFINITION OF DONE
+====================================================================
+
+The project is not complete because:
+- the website opens
+- a 3D drone rotates
+- buttons work
+- a flight path animates.
+
+The project is complete only when a learner can:
+
+START
+→ understand
+→ inspect
+→ plan
+→ fly
+→ collect
+→ process
+→ troubleshoot
+→ validate
+→ calculate
+→ document
+→ make an engineering decision.
+
+====================================================================
+262. OPEN-SOURCE IDENTITY
+====================================================================
+
+Project credit:
+
+MD SALIM ANSARI
+
+Repository should prominently state:
+
+“An open-source interactive educational platform for Drone Surveying in Mining,
+created/initiated by MD Salim Ansari.”
+
+License:
+MIT.
+
+====================================================================
+263. FINAL MASTER CHAIN
+====================================================================
+
+BUY
+→ RECEIVE
+→ INSPECT
+→ CONFIGURE
+→ MAINTAIN
+→ MOBILIZE
+→ ENTER MINE
+→ DEFINE OBJECTIVE
+→ CONTROL
+→ CRS
+→ HEIGHT
+→ NORTH
+→ AIRCRAFT
+→ AERODYNAMICS
+→ IMU
+→ COMPASS
+→ GNSS
+→ RTK/PPK
+→ PAYLOAD
+→ CAMERA
+→ GSD
+→ OVERLAP
+→ MISSION
+→ PREFLIGHT
+→ FLIGHT
+→ CAPTURE
+→ LAND
+→ RAW DATA
+→ BACKUP
+→ GCP
+→ CHECKPOINT
+→ KEYPOINT
+→ TIE POINT
+→ CAMERA POSE
+→ TRIANGULATION
+→ BUNDLE ADJUSTMENT
+→ REPROJECTION ERROR
+→ DENSE CLOUD
+→ CLASSIFICATION
+→ TIN
+→ DSM
+→ DTM
+→ ORTHOMOSAIC
+→ MESH
+→ CONTOURS
+→ PROFILE
+→ VOLUME
+→ CHANGE
+→ GIS
+→ CAD
+→ MINE MODEL
+→ QA/QC
+→ REPORT
+→ DECISION.
+
+====================================================================
+END OF ULTIMATE FUTURE-READY MASTER SPECIFICATION
+====================================================================
+
+
+====================================================================
+SAFETY EXPANSION — MASTER DRONE SURVEYING IN MINING SAFETY SYSTEM
+====================================================================
+
+A. SAFETY IS A FIRST-CLASS PRODUCT MODULE
+====================================================================
+
+The web application must treat safety as a core engineering system rather
+than a checklist appended to the end.
+
+Create a top-level:
+
+SAFETY CENTER
+
+with:
+
+1. SAFETY FUNDAMENTALS
+2. REGULATORY / AUTHORIZATION CHECK
+3. RISK ASSESSMENT
+4. JOB SAFETY ANALYSIS
+5. MINE HAZARD MAP
+6. AIRCRAFT SAFETY FEATURES
+7. PILOT / OBSERVER PROCEDURES
+8. PREFLIGHT SAFETY
+9. LAUNCH / TAKEOFF SAFETY
+10. IN-FLIGHT SAFETY
+11. EMERGENCY PROCEDURES
+12. LOST-LINK / RTH
+13. GNSS / NAVIGATION FAILURE
+14. COMPASS FAILURE
+15. BATTERY INCIDENTS
+16. CRASH / FLYAWAY
+17. WEATHER
+18. HEMM / MINING OPERATIONS
+19. BLASTING SAFETY
+20. POWERLINE / ELECTRICAL HAZARDS
+21. PEOPLE / PUBLIC / WORKER SAFETY
+22. STRUCTURES / HIGHWALLS
+23. DUST / VISIBILITY
+24. DATA / CYBER SAFETY
+25. POST-FLIGHT
+26. INCIDENT / NEAR-MISS REPORTING
+27. MAINTENANCE SAFETY
+28. SOP LIBRARY
+29. TRAINER SAFETY DRILLS
+30. SAFETY ASSESSMENT.
+
+====================================================================
+B. SAFETY PHILOSOPHY
+====================================================================
+
+Teach:
+
+NO SURVEY OBJECTIVE JUSTIFIES UNCONTROLLED RISK.
+
+Use the hierarchy:
+
+ELIMINATE
+→ SUBSTITUTE / CHANGE METHOD
+→ ENGINEER CONTROLS
+→ ADMINISTRATIVE CONTROLS
+→ PERSONAL PROTECTIVE EQUIPMENT.
+
+Make the learner ask:
+
+Can I avoid the flight?
+Can I move the launch area?
+Can I change the flight pattern?
+Can I use a different payload or method?
+Can I restrict access?
+Can I postpone the mission?
+Can I obtain better control information?
+
+The safest correct decision may be:
+DO NOT FLY.
+
+====================================================================
+C. SAFETY ROLES AND RESPONSIBILITIES
+====================================================================
+
+Create role cards.
+
+PILOT / REMOTE PILOT:
+- aircraft control
+- immediate flight safety
+- preflight
+- aircraft status
+- emergency action.
+
+SURVEY ENGINEER:
+- survey objective
+- methodology
+- control
+- data quality
+- survey validity
+- engineering deliverables.
+
+VISUAL OBSERVER / SUPPORT PERSON:
+- visual scanning
+- hazard communication
+- coordination
+- exclusion-area awareness.
+
+MINE CONTROL / OPERATIONS:
+- HEMM coordination
+- blasting information
+- operational constraints
+- mine traffic.
+
+SAFETY / SUPERVISOR:
+- risk controls
+- authorization
+- emergency response
+- stop-work decisions.
+
+Create an RACI-style matrix where appropriate.
+
+====================================================================
+D. PRE-MISSION SAFETY GATE
+====================================================================
+
+Before mission launch, require:
+
+OBJECTIVE CONFIRMED
+→ SITE RECONNAISSANCE
+→ CURRENT HAZARDS REVIEWED
+→ AUTHORIZATION/REGULATORY STATUS REVIEWED
+→ WEATHER CHECKED
+→ AIRSPACE/OPERATING CONDITIONS CHECKED
+→ PEOPLE / HEMM INTERFACE CONTROLLED
+→ LAUNCH/RECOVERY AREA SAFE
+→ AIRCRAFT INSPECTED
+→ BATTERY SAFE
+→ GNSS / NAVIGATION STATUS CHECKED
+→ COMMUNICATIONS CHECKED
+→ RTH STRATEGY REVIEWED
+→ EMERGENCY LANDING AREAS IDENTIFIED
+→ CONTROL/GCP PLAN READY
+→ DATA PLAN READY
+→ TEAM BRIEFED
+→ GO / NO-GO DECISION.
+
+====================================================================
+E. GO / NO-GO DECISION ENGINE
+====================================================================
+
+Create an interactive decision gate.
+
+Inputs:
+- weather
+- wind
+- visibility
+- lightning/storm risk where applicable
+- aircraft condition
+- battery
+- communications
+- GNSS
+- compass
+- RTH
+- mine traffic
+- blasting
+- power hazards
+- people
+- launch area
+- mission integrity
+- regulatory/authorization status.
+
+Outputs:
+GO
+GO WITH CONTROLS
+DELAY
+NO-GO.
+
+Do not hide the reason.
+
+Every decision must show:
+evidence
+hazard
+risk
+control
+residual risk.
+
+====================================================================
+F. RISK ASSESSMENT LAB
+====================================================================
+
+Create a 5x5 style training risk matrix as a configurable educational tool.
+
+Risk:
+LIKELIHOOD × CONSEQUENCE.
+
+Let the organization configure:
+- likelihood definitions
+- consequence definitions
+- risk bands.
+
+Do not claim one matrix is universally required.
+
+For each hazard:
+HAZARD
+→ WHO/WHAT EXPOSED
+→ INITIAL RISK
+→ CONTROL
+→ RESIDUAL RISK
+→ OWNER
+→ VERIFICATION.
+
+====================================================================
+G. JOB SAFETY ANALYSIS (JSA) SIMULATION
+====================================================================
+
+Learner decomposes the job:
+
+1. Mobilize.
+2. Enter mine.
+3. Conduct site reconnaissance.
+4. Establish launch area.
+5. Prepare aircraft.
+6. Place/observe GCPs.
+7. Plan mission.
+8. Launch.
+9. Survey.
+10. Return.
+11. Land.
+12. Secure equipment.
+13. Transfer data.
+14. Process.
+15. Deliver.
+
+At each step identify hazards and controls.
+
+====================================================================
+H. TOOLBOX TALK / PRE-JOB BRIEF
+====================================================================
+
+Create a digital briefing screen.
+
+Must cover:
+- objective
+- work area
+- team members
+- roles
+- hazards
+- exclusion zone
+- flight area
+- communications
+- weather
+- emergency plan
+- RTH plan
+- landing plan
+- battery plan
+- data plan
+- stop-work authority.
+
+Learner must acknowledge the briefing.
+
+====================================================================
+I. STOP-WORK AUTHORITY
+====================================================================
+
+Teach that any authorized team member should be able to stop the operation
+when a serious uncontrolled hazard develops, consistent with site policy.
+
+Create scenario:
+HEMM enters exclusion area.
+
+Correct workflow:
+PAUSE / ABORT / LAND OR MOVE TO SAFE STATE
+→ COMMUNICATE
+→ REASSESS
+→ RESUME ONLY AFTER CONTROL IS RE-ESTABLISHED.
+
+Do not let the simulator reward “continue regardless”.
+
+====================================================================
+J. EXCLUSION ZONE SIMULATOR
+====================================================================
+
+Show:
+- aircraft operating zone
+- takeoff/landing zone
+- people exclusion zone
+- HEMM interaction zone
+- hazard buffer
+- emergency landing zone
+- no-go areas.
+
+Make distances configurable for training.
+Do not hard-code universal safety distances.
+
+====================================================================
+K. HEMM INTERACTION
+====================================================================
+
+Create realistic mining traffic.
+
+Examples:
+- excavator
+- dumper
+- grader
+- dozer
+- drilling machine
+- water tanker.
+
+Teach:
+- traffic awareness
+- radio/communication coordination
+- visual observation
+- never assume a vehicle operator has seen the aircraft
+- avoid flight paths that create unsafe conflicts
+- suspend flight when safe separation cannot be maintained.
+
+====================================================================
+L. BLASTING SAFETY
+====================================================================
+
+Create a blasting-status gate.
+
+Mission cannot proceed until:
+- blast area status is known
+- exclusion restrictions are understood
+- mine control/blasting authority confirms the operational status.
+
+Do not invent universal blast exclusion distances.
+
+Use:
+SITE-SPECIFIC BLAST SOP / CURRENT MINE PLAN / AUTHORIZED PERSONNEL.
+
+Create scenarios:
+- scheduled blast
+- blast preparation
+- unknown blast status
+- blast completed and area not yet released.
+
+Unknown status:
+NO-GO.
+
+====================================================================
+M. POWERLINE / ELECTRICAL HAZARDS
+====================================================================
+
+Teach:
+- overhead powerlines
+- substations
+- electrical equipment
+- transmission infrastructure
+- RF/electromagnetic environment.
+
+Show visual detection challenge:
+thin powerline is hard to see in imagery.
+
+Allow hazard marking on map.
+
+Do not assume obstacle sensing reliably detects thin wires.
+
+====================================================================
+N. PEOPLE / WORKER SAFETY
+====================================================================
+
+Teach:
+- unauthorized persons
+- workers
+- contractors
+- visitors
+- vehicle occupants.
+
+Create:
+worker enters AOI unexpectedly.
+
+Learner must:
+pause/abort/reposition according to the scenario and site controls.
+
+Do not normalize flight over people.
+
+====================================================================
+O. FALLING / ROTOR / IMPACT HAZARD
+====================================================================
+
+Explain:
+rotating propellers and moving aircraft are physical hazards.
+
+Preflight:
+maintain safe handling position.
+Avoid unnecessary approach to energized rotors.
+Use approved start/stop handling procedures.
+
+Crash simulation:
+aircraft impacts ground.
+Show:
+battery isolation
+area control
+team response
+incident reporting
+do not immediately approach a damaged battery.
+
+====================================================================
+P. BATTERY SAFETY MODULE
+====================================================================
+
+Teach:
+- Li-ion/LiPo-type battery hazard concept
+- damaged cells
+- swelling
+- puncture
+- heat
+- short circuit
+- fire
+- charging
+- storage
+- transport
+- quarantine.
+
+IMPORTANT:
+Exact charging/storage/transport procedure must follow the battery and
+aircraft manufacturer's instructions and applicable organizational rules.
+
+Create scenarios:
+1. normal battery
+2. hot battery
+3. swollen battery
+4. damaged battery
+5. damaged connector
+6. charging fault
+7. smoke/thermal event.
+
+For fire/thermal event:
+prioritize people and site emergency procedure.
+Do not teach improvised firefighting methods that conflict with site/manufacturer guidance.
+
+====================================================================
+Q. BATTERY PREFLIGHT
+====================================================================
+
+Check:
+- physical condition
+- identification
+- charge state
+- temperature
+- cell/health status where available
+- cycle history
+- connector
+- aircraft compatibility.
+
+Do not fly on a battery that the manufacturer/site procedure identifies as unsafe.
+
+====================================================================
+R. WEATHER SAFETY
+====================================================================
+
+Create weather dashboard:
+
+wind speed
+wind direction
+gusts
+temperature
+rain
+visibility
+lightning/storm indicators
+dust
+humidity.
+
+Teach:
+- manufacturer operating envelope
+- organization limits
+- mission-specific limits
+- effect of wind on endurance
+- image quality
+- stability
+- RTH.
+
+Do not invent universal wind limits.
+
+If actual product limits are displayed:
+use current manufacturer documentation.
+
+====================================================================
+S. WIND GUST SIMULATION
+====================================================================
+
+Wind increases during flight.
+
+Show:
+ground track
+crab
+battery effect
+flight-line deviation.
+
+Learner decides:
+continue
+pause
+RTH
+land
+abort.
+
+====================================================================
+T. WEATHER ABORT CRITERIA
+====================================================================
+
+Make configurable rules such as:
+- storm detected
+- lightning warning
+- visibility below mission requirement
+- wind outside aircraft/organization limit
+- heavy rain where not allowed
+- dust obscures visual control
+- camera quality degradation.
+
+Use:
+CONFIGURED TRAINING THRESHOLD.
+
+Do not claim a threshold is universally applicable.
+
+====================================================================
+U. VISUAL LINE / OBSERVATION SAFETY
+====================================================================
+
+Teach:
+pilot must maintain required visual awareness/control according to applicable
+law, manufacturer guidance and site SOP.
+
+Create scenario:
+drone enters visually obstructed area behind highwall.
+
+Learner must respond rather than blindly trusting telemetry.
+
+====================================================================
+V. HIGHWALL SAFETY
+====================================================================
+
+Risks:
+- rockfall
+- unstable face
+- wind turbulence
+- poor visibility
+- GNSS obstruction/multipath
+- RF issues
+- inaccessible recovery area.
+
+Teach:
+surveying a highwall must account for geotechnical and operational hazards.
+
+Do not use the drone as justification to approach a hazardous face.
+
+====================================================================
+W. TAKEOFF / LANDING SAFETY
+====================================================================
+
+Create:
+safe launch pad
+clean surface
+people exclusion
+debris control
+propeller clearance
+aircraft orientation
+GNSS/home point verification.
+
+Landing:
+- clear landing zone
+- monitor HEMM/people
+- confirm aircraft state
+- secure aircraft
+- disarm
+- only then approach.
+
+Do not teach procedures that conflict with aircraft-specific instructions.
+
+====================================================================
+X. RTH SAFETY
+====================================================================
+
+Teach:
+RTH is a contingency function, not automatically the safest action.
+
+Before flight:
+- define home point
+- understand RTH altitude/behavior
+- identify obstacles on RTH path
+- understand whether terrain may exceed planned clearance
+- understand aircraft-specific RTH logic.
+
+Failure case:
+RTH path crosses highwall/structure.
+
+Learner must evaluate alternatives according to the aircraft and site procedure.
+
+====================================================================
+Y. LOST LINK
+====================================================================
+
+Simulate:
+telemetry lost
+control link degraded/lost.
+
+Show:
+aircraft enters configured failsafe behavior.
+
+Explain:
+exact behavior is aircraft/configuration dependent.
+
+Learner must know:
+- preconfigured action
+- last known state
+- possible recovery
+- people/HEMM hazard
+- emergency response.
+
+Never tell learner to assume RTH will always work.
+
+====================================================================
+Z. GNSS DEGRADATION
+====================================================================
+
+Simulate:
+FIX
+→ FLOAT
+→ degraded navigation.
+
+Show:
+- position uncertainty concept
+- flight mode changes
+- mission risk
+- possible return/land strategy.
+
+Do not equate one GNSS state with a universal accuracy number.
+
+====================================================================
+AA. GNSS SPOOFING / JAMMING AWARENESS
+====================================================================
+
+Expert module.
+
+Explain at high level:
+- interference
+- jamming
+- spoofing
+- degraded position
+- navigation inconsistency.
+
+Show cross-check:
+GNSS position
+vs
+IMU
+vs
+map
+vs
+expected trajectory
+vs
+operator observation.
+
+If inconsistent:
+pause/reassess/land according to aircraft/site procedure.
+
+Do not teach ways to create or evade GNSS interference.
+
+====================================================================
+AB. COMPASS SAFETY
+====================================================================
+
+Teach:
+- calibration
+- magnetic interference
+- power equipment
+- vehicles
+- steel
+- sensor mounting.
+
+Show:
+compass warning
+heading inconsistency.
+
+Do not encourage calibration in a magnetically disturbed location.
+
+====================================================================
+AC. OBSTACLE AVOIDANCE
+====================================================================
+
+Teach:
+Obstacle sensing is supplementary, not a guarantee.
+
+Potential limitations:
+- thin wires
+- small objects
+- low texture
+- transparent/reflective surfaces
+- dust
+- lighting
+- sensor field-of-view
+- disabled sensors
+- terrain geometry.
+
+Do not fly close to hazards assuming obstacle avoidance will prevent collision.
+
+====================================================================
+AD. HUMAN FACTORS
+====================================================================
+
+Teach:
+- fatigue
+- distraction
+- overconfidence
+- confirmation bias
+- rushed operation
+- checklist skipping
+- communication breakdown
+- normalization of deviance.
+
+Create:
+“Experienced operator skips compass/site check because the previous flight was fine.”
+
+Show how risk accumulates.
+
+====================================================================
+AE. TWO-PERSON CHECK / CROSS CHECK
+====================================================================
+
+Where site procedure requires/benefits from it, create:
+pilot
++
+surveyor
+cross-check.
+
+Examples:
+- correct mission file
+- correct AOI
+- correct battery
+- correct payload
+- correct CRS
+- correct RTH
+- correct GCP plan.
+
+====================================================================
+AF. CHECKLIST ENGINE
+====================================================================
+
+Build reusable digital checklists:
+
+A1 — Procurement Acceptance
+A2 — Transport
+A3 — Site Entry
+A4 — Weather
+A5 — Risk Assessment
+A6 — Aircraft
+A7 — Battery
+A8 — Payload
+A9 — Navigation
+A10 — Mission
+A11 — Control/GCP
+A12 — Launch
+A13 — Flight
+A14 — Emergency
+A15 — Landing
+A16 — Post-flight
+A17 — Data Backup
+A18 — Processing
+A19 — QA/QC
+A20 — Final Issue.
+
+Allow:
+complete
+skip with reason
+fail
+retest
+sign/acknowledge.
+
+====================================================================
+AG. SOP LIBRARY
+====================================================================
+
+Provide editable generic templates:
+
+SOP-001 DRONE PROCUREMENT AND ACCEPTANCE
+SOP-002 AIRCRAFT INSPECTION
+SOP-003 BATTERY HANDLING
+SOP-004 TRANSPORT/MOBILIZATION
+SOP-005 MINE SITE ENTRY
+SOP-006 UAV RISK ASSESSMENT
+SOP-007 MISSION PLANNING
+SOP-008 PRE-FLIGHT
+SOP-009 TAKEOFF
+SOP-010 MANUAL FLIGHT
+SOP-011 AUTONOMOUS SURVEY FLIGHT
+SOP-012 RTH
+SOP-013 LOST-LINK
+SOP-014 GNSS DEGRADATION
+SOP-015 COMPASS ABNORMALITY
+SOP-016 BAD WEATHER
+SOP-017 HEMM CONFLICT
+SOP-018 BLASTING INTERFACE
+SOP-019 POWERLINE HAZARD
+SOP-020 PEOPLE/EXCLUSION ZONE
+SOP-021 EMERGENCY LANDING
+SOP-022 CRASH/IMPACT
+SOP-023 FLYAWAY
+SOP-024 BATTERY INCIDENT
+SOP-025 POST-FLIGHT
+SOP-026 DATA BACKUP
+SOP-027 DATA PROCESSING
+SOP-028 QA/QC
+SOP-029 INCIDENT REPORTING
+SOP-030 MAINTENANCE
+SOP-031 SOFTWARE/firmware CHANGE CONTROL
+SOP-032 CYBER/DATA SECURITY
+SOP-033 ARCHIVE
+SOP-034 FINAL REPORT.
+
+Each SOP must use:
+
+PURPOSE
+SCOPE
+RESPONSIBILITIES
+PREREQUISITES
+HAZARDS
+REQUIRED CONTROLS
+EQUIPMENT
+STEP-BY-STEP
+STOP CONDITIONS
+EMERGENCY ACTIONS
+RECORDS
+QA/QC
+REFERENCES
+REVISION HISTORY.
+
+====================================================================
+AH. EMERGENCY PROCEDURE ENGINE
+====================================================================
+
+Create an emergency dashboard.
+
+Buttons:
+
+RTH
+LAND
+EMERGENCY LAND
+PAUSE
+ABORT
+COMMUNICATE
+STOP WORK
+CALL SITE EMERGENCY RESPONSE.
+
+Do not make emergency actions universal.
+The simulator should display:
+“Follow configured aircraft/site emergency procedure.”
+
+====================================================================
+AI. FLYAWAY SIMULATION
+====================================================================
+
+Show:
+position becomes unexpected
+telemetry state
+GNSS state
+heading
+known home point
+last known location.
+
+Teach:
+do not chase blindly.
+
+Use:
+site emergency response
+maintain people safety
+follow aircraft/site flyaway procedure
+record last known position/time
+notify relevant personnel.
+
+====================================================================
+AJ. CRASH RESPONSE
+====================================================================
+
+Simulation:
+
+AIRCRAFT IMPACT.
+
+Sequence:
+1. Protect people.
+2. Establish area control.
+3. Prevent approach to potential battery hazard.
+4. Inform site responsible person.
+5. Follow emergency procedure.
+6. Preserve evidence where appropriate.
+7. Do not restart damaged aircraft without inspection/authorization.
+8. Record incident.
+9. Assess whether other hazards remain.
+10. Quarantine damaged equipment.
+
+====================================================================
+AK. POST-CRASH DATA FORENSICS
+====================================================================
+
+After incident:
+- preserve flight logs
+- preserve telemetry
+- preserve mission
+- preserve images
+- preserve configuration
+- record location/time
+- record weather
+- record aircraft state.
+
+Teach:
+do not overwrite evidence.
+
+====================================================================
+AL. INCIDENT / NEAR-MISS REPORTING
+====================================================================
+
+Create form:
+
+DATE
+TIME
+LOCATION
+MISSION
+AIRCRAFT
+PAYLOAD
+PEOPLE
+EVENT
+IMMEDIATE ACTION
+HAZARD
+ROOT CAUSE
+CONTRIBUTING FACTORS
+CORRECTIVE ACTION
+PREVENTIVE ACTION
+LESSONS LEARNED.
+
+Distinguish:
+incident
+near miss
+unsafe condition
+equipment fault.
+
+====================================================================
+AM. ROOT-CAUSE ANALYSIS LAB
+====================================================================
+
+Teach:
+5 Whys
+Fishbone / Ishikawa
+barrier analysis
+event timeline.
+
+Example:
+“Drone entered unsafe area.”
+
+Do not stop at:
+“pilot error.”
+
+Explore:
+- mission planning
+- communication
+- exclusion control
+- checklist
+- supervision
+- map
+- training
+- equipment.
+
+====================================================================
+AN. SAFETY BARRIER MODEL
+====================================================================
+
+Show layers:
+
+REGULATORY / AUTHORIZATION
+SITE SOP
+RISK ASSESSMENT
+SITE BRIEFING
+MISSION PLAN
+EXCLUSION ZONE
+PREFLIGHT
+PILOT
+OBSERVER
+FAILSAFE
+RTH
+EMERGENCY RESPONSE
+POST-FLIGHT REVIEW.
+
+If several barriers fail, incident likelihood can increase.
+
+====================================================================
+AO. AIRCRAFT SAFETY FEATURES LAB
+====================================================================
+
+Show platform-dependent safety functions:
+
+- RTH
+- lost-link failsafe
+- low-battery warning
+- low-battery failsafe
+- geofence
+- altitude limits where configured
+- obstacle sensing
+- GNSS monitoring
+- compass monitoring
+- IMU monitoring
+- motor/ESC warnings
+- battery health
+- home-point status
+- flight-mode warnings
+- controller/link status
+- payload/gimbal protection where applicable.
+
+For each:
+PURPOSE
+TRIGGER
+EXPECTED BEHAVIOR
+LIMITATION
+PILOT RESPONSE
+SURVEY IMPACT.
+
+Never imply every aircraft has every function.
+
+====================================================================
+AP. FAILSAFE LAB
+====================================================================
+
+Learner selects:
+trigger
+→ configured response
+→ simulated outcome.
+
+Examples:
+low battery
+lost link
+GNSS failure
+sensor anomaly.
+
+====================================================================
+AQ. AIRCRAFT HEALTH MONITORING
+====================================================================
+
+Display:
+- battery health
+- motor status
+- sensor status
+- GNSS
+- compass
+- storage
+- temperature
+- warnings
+- firmware.
+
+Teach:
+a warning is information requiring interpretation, not a decorative status.
+
+====================================================================
+AR. PRE-FLIGHT PHYSICAL INSPECTION
+====================================================================
+
+Visual microscope.
+
+Click:
+propeller
+motor
+arm
+gimbal
+camera
+antenna
+connector.
+
+Introduce defects.
+
+====================================================================
+AS. PAYLOAD SAFETY
+====================================================================
+
+RGB:
+lens
+gimbal
+storage
+filter.
+
+LiDAR:
+laser safety according to manufacturer.
+
+Thermal:
+sensor/protective window.
+
+Multispectral:
+lens/filter integrity.
+
+Do not invent laser classification or operational limits.
+Use current manufacturer data.
+
+====================================================================
+AT. DATA PRIVACY / SECURITY
+====================================================================
+
+Teach:
+mine imagery may contain sensitive infrastructure.
+
+Do not publish:
+- sensitive mine coordinates
+- control points
+- security layouts
+- private people imagery
+- operational data
+- credentials.
+
+Create data classification:
+PUBLIC
+INTERNAL
+CONFIDENTIAL
+RESTRICTED.
+
+====================================================================
+AU. CYBERSECURITY
+====================================================================
+
+Teach:
+- strong passwords
+- account controls
+- MFA where available
+- firmware authenticity
+- secure storage
+- malware scanning
+- least privilege
+- offline backups
+- software provenance.
+
+Do not expose credentials/API keys in public GitHub.
+
+====================================================================
+AV. MEDIA AUTHENTICITY
+====================================================================
+
+Teach:
+- original image preservation
+- metadata preservation
+- timestamps
+- chain of custody
+- edited derivatives.
+
+====================================================================
+AW. GITHUB SAFETY
+====================================================================
+
+Public repository must use only:
+- synthetic mine
+- synthetic imagery
+- synthetic coordinates
+- synthetic logs.
+
+Add:
+.gitignore
+secret scanning
+dependabot/security updates where appropriate
+dependency review
+no credentials in source
+no real operational mine data.
+
+====================================================================
+AX. WEATHER / ENVIRONMENTAL LOG
+====================================================================
+
+Record:
+wind
+gust
+temperature
+rain
+visibility
+dust
+lighting
+surface conditions
+time.
+
+====================================================================
+AY. MINE TRAFFIC INTERFACE
+====================================================================
+
+Create live HEMM simulation.
+
+Aircraft operating area overlaps traffic.
+
+Learner communicates/pauses.
+
+====================================================================
+AZ. RADIO COMMUNICATION SIMULATOR
+====================================================================
+
+Teach clear communication:
+
+WHO
+WHERE
+WHAT
+WHEN
+ACTION.
+
+Example:
+“UAV survey operation active east of stockpile. Hold mobile equipment
+within the defined exclusion area until released.”
+
+Use simulated communications only.
+
+====================================================================
+BA. LAUNCH SITE SELECTION
+====================================================================
+
+Criteria:
+- clear
+- stable
+- controlled
+- safe
+- known location
+- suitable communications
+- suitable GNSS environment
+- away from magnetic disturbance where practical
+- away from HEMM conflict
+- suitable emergency landing options.
+
+====================================================================
+BB. ALTERNATE LAUNCH SITE
+====================================================================
+
+Require a backup launch/landing area where appropriate.
+
+====================================================================
+BC. EMERGENCY LANDING SITE
+====================================================================
+
+Map at least one controlled emergency landing zone.
+
+Do not select:
+people
+active roads
+power equipment
+unstable slopes
+blast areas
+water where avoidable
+dense vegetation
+critical infrastructure.
+
+====================================================================
+BD. MISSION ABORT TRIGGERS
+====================================================================
+
+Make configurable examples:
+
+- unexpected personnel
+- HEMM conflict
+- weather deterioration
+- aircraft warning
+- battery anomaly
+- navigation anomaly
+- communication anomaly
+- camera anomaly
+- loss of safe operating environment.
+
+====================================================================
+BE. HUMAN-MACHINE INTERFACE SAFETY
+====================================================================
+
+Show alerts with:
+severity
+reason
+recommended action
+acknowledgement
+timestamp.
+
+Do not make warnings disappear without acknowledgement.
+
+====================================================================
+BF. SAFETY COLOR / ICON SYSTEM
+====================================================================
+
+Use consistent semantics:
+GREEN = normal
+AMBER = caution
+RED = stop/critical
+BLUE = information.
+
+Do not rely on color alone; include icons/text.
+
+====================================================================
+BG. SAFETY DRILLS
+====================================================================
+
+Trainer can inject:
+- sudden HEMM
+- blast warning
+- low battery
+- lost link
+- GNSS failure
+- compass warning
+- weather
+- worker in AOI
+- powerline discovered
+- camera failure
+- emergency landing.
+
+====================================================================
+BH. COMPETENCY ASSESSMENT
+====================================================================
+
+Safety assessment should test:
+- hazard identification
+- risk assessment
+- go/no-go
+- checklist
+- emergency decisions
+- communication
+- crash response
+- data evidence preservation.
+
+====================================================================
+BI. “NEVER DO THIS” GALLERY
+====================================================================
+
+Examples:
+- fly with known damaged aircraft
+- ignore battery warnings
+- rely blindly on RTH
+- assume obstacle avoidance sees every hazard
+- fly despite unknown blast status
+- calibrate compass next to strong magnetic objects
+- publish sensitive mine data
+- overwrite incident evidence
+- process without preserving raw data
+- continue after loss of safe operating conditions.
+
+Use explanatory reasoning rather than fear-based messaging.
+
+====================================================================
+BJ. SAFETY SOP TEMPLATE — FULL STRUCTURE
+====================================================================
+
+Every SOP page must include:
+
+1. SOP ID
+2. Title
+3. Revision
+4. Effective Date
+5. Owner
+6. Approval
+7. Purpose
+8. Scope
+9. Definitions
+10. Roles
+11. Competency requirements
+12. Required documents
+13. Equipment
+14. PPE
+15. Pre-job checks
+16. Hazard identification
+17. Risk assessment
+18. Controls
+19. Procedure
+20. Stop-work conditions
+21. Emergency procedure
+22. Post-job checks
+23. Records
+24. QA/QC
+25. Lessons learned
+26. Revision history.
+
+====================================================================
+BK. PPE MODULE
+====================================================================
+
+Teach that PPE is one layer of control, not a replacement for engineering or
+administrative controls.
+
+Show site-specific PPE examples:
+- helmet
+- eye protection
+- high-visibility clothing
+- safety footwear
+- hearing protection where required
+- task-specific PPE.
+
+Do not invent mandatory PPE lists; use mine/site rules.
+
+====================================================================
+BL. DRONE WORKSHOP SAFETY
+====================================================================
+
+When inspecting:
+- remove/secure batteries as appropriate
+- prevent unintended motor activation
+- use approved work surface
+- keep tools controlled
+- inspect propeller edges
+- avoid damaged lithium batteries
+- follow service manual.
+
+====================================================================
+BM. CHARGING AREA SAFETY
+====================================================================
+
+Simulate:
+approved charging location
+inspection
+monitoring
+separation
+storage
+fire/emergency plan.
+
+Use organization/manufacturer requirements.
+
+====================================================================
+BN. BATTERY TRANSPORT
+====================================================================
+
+Explain:
+transport requirements depend on chemistry, packaging, jurisdiction and
+transport mode.
+
+Do not hard-code dangerous-goods rules without verified current sources.
+
+====================================================================
+BO. POST-MISSION EQUIPMENT SECURING
+====================================================================
+
+Checklist:
+- aircraft safe
+- motors stopped
+- batteries handled correctly
+- payload protected
+- memory removed/secured
+- cases closed
+- logs saved
+- defects recorded.
+
+====================================================================
+BP. DATA SAFETY
+====================================================================
+
+Raw data:
+READ-ONLY concept.
+
+Backup:
+local
+independent
+off-site where policy allows.
+
+No public upload of sensitive mine data.
+
+====================================================================
+BQ. PROCESSING SAFETY
+====================================================================
+
+Processing is not physically hazardous in the same way as flight, but data
+integrity is safety/quality critical.
+
+Teach:
+- source preservation
+- malware checks
+- trusted software
+- version recording
+- no destructive editing.
+
+====================================================================
+BR. QA/QC SAFETY LINK
+====================================================================
+
+Explain that a technically unsafe operation can also produce invalid survey data.
+
+Safety and data quality can interact:
+- high wind
+- vibration
+- poor visibility
+- poor GNSS
+- rushed fieldwork
+- compromised control.
+
+====================================================================
+BS. SAFETY VS SURVEY QUALITY TRADE-OFF
+====================================================================
+
+Create cases where:
+better coverage would require entering a hazardous area.
+
+Learner should choose a safer alternative survey method where possible:
+- different flight line
+- different launch
+- complementary ground survey
+- postpone
+- partial survey
+- no-go.
+
+Never reward hazardous proximity for better data.
+
+====================================================================
+BT. FIELD EMERGENCY CARD
+====================================================================
+
+Provide a printable/offline quick-reference card containing:
+- mission ID
+- emergency contacts
+- site control
+- pilot
+- observer
+- aircraft
+- last known position
+- home point
+- RTH state
+- battery
+- emergency landing area
+- stop-work trigger.
+
+Do not store sensitive emergency contact data in public demo content.
+
+====================================================================
+BU. SAFETY LOGGING
+====================================================================
+
+Record:
+checklist completion
+hazards
+controls
+Go/No-Go
+anomalies
+incidents
+near misses
+decisions.
+
+====================================================================
+BV. SAFETY ANALYTICS
+====================================================================
+
+Track:
+- checklist compliance
+- repeat mistakes
+- unsafe decisions
+- emergency response time in simulation
+- hazard recognition
+- stop-work usage
+- correct escalation.
+
+Do not reward reckless speed.
+
+====================================================================
+BW. SAFETY CERTIFICATE — SIMULATED
+====================================================================
+
+The app may issue:
+“TRAINING MODULE COMPLETED”
+
+but MUST NOT imply:
+- legal pilot certification
+- regulatory authorization
+- company approval
+- aircraft manufacturer certification.
+
+====================================================================
+BX. CURRENT REGULATORY SOURCE ARCHITECTURE
+====================================================================
+
+Keep current regulatory information separate from static teaching content.
+
+For India or any jurisdiction:
+- source
+- URL
+- regulator
+- version
+- effective date
+- date checked
+- applicable category.
+
+The coding AI must verify current official sources before presenting current
+legal requirements.
+
+====================================================================
+BY. SAFETY SOURCE RULE
+====================================================================
+
+For exact/current safety limits, always prioritize:
+1. applicable law/regulation
+2. mine/site SOP
+3. aircraft/payload manufacturer manual
+4. approved organizational risk assessment
+5. competent professional judgment.
+
+Do not replace these with generic internet advice.
+
+====================================================================
+BZ. SAFETY VERSION CONTROL
+====================================================================
+
+Every SOP must have:
+Revision
+Date
+Owner
+Approver
+Change summary.
+
+====================================================================
+CA. SAFETY CHANGE MANAGEMENT
+====================================================================
+
+When aircraft changes:
+reassess:
+- payload
+- battery
+- weight
+- balance
+- firmware
+- controls
+- mission
+- SOP.
+
+When mine environment changes:
+reassess:
+- traffic
+- power
+- blast
+- structures
+- launch
+- communications.
+
+====================================================================
+CB. TRAINER SCENARIO PACK
+====================================================================
+
+Provide at least 30 safety scenarios:
+
+1. Damaged propeller
+2. Swollen battery
+3. Strong wind
+4. Sudden gust
+5. Lightning warning
+6. Dust
+7. Worker enters zone
+8. Excavator enters zone
+9. Dump truck crosses flight area
+10. Blast status unknown
+11. Powerline discovered
+12. Compass warning
+13. GNSS FLOAT
+14. Correction loss
+15. Lost telemetry
+16. RTH path blocked
+17. Low battery
+18. Camera failure
+19. Memory full
+20. Highwall obstruction
+21. Launch-site conflict
+22. Emergency landing
+23. Flyaway
+24. Crash
+25. Battery thermal event
+26. Wrong mission loaded
+27. Wrong CRS
+28. Wrong RTH setting
+29. Communication failure
+30. Operator fatigue/distraction.
+
+====================================================================
+CC. SAFETY SIMULATION SCORING
+====================================================================
+
+Score:
+hazard recognition
+risk control
+decision quality
+communication
+checklist
+emergency handling
+data preservation.
+
+Never give higher score for taking greater physical risk.
+
+====================================================================
+CD. “SAFEST VALID SURVEY” CHALLENGE
+====================================================================
+
+Learner receives:
+“Need 3 cm/pixel survey of active area.”
+
+But a portion is unsafe.
+
+They must determine:
+can the mission be redesigned?
+Can control be moved?
+Can a complementary survey method cover the unsafe section?
+Should the unsafe section remain unsurveyed with a limitation?
+Should the mission be delayed?
+
+The correct outcome depends on scenario evidence.
+
+====================================================================
+CE. SAFETY-FIRST DIGITAL TWIN
+====================================================================
+
+Every simulated object can be both:
+survey object
+and
+safety hazard.
+
+Examples:
+- excavator is a 3D object AND moving hazard.
+- highwall is terrain AND geotechnical hazard.
+- powerline is map feature AND flight hazard.
+- battery is energy source AND safety hazard.
+- GNSS is navigation source AND possible degraded state.
+
+====================================================================
+CF. FINAL SAFETY PRINCIPLE
+====================================================================
+
+The system must repeatedly teach:
+
+NO DATASET IS WORTH AN UNCONTROLLED SAFETY EVENT.
+
+The professional goal is:
+
+SAFE OPERATION
++
+VALID DATA
++
+TRACEABLE PROCESS
++
+DEFENSIBLE ENGINEERING RESULT.
+
+====================================================================
+CG. ADDITIONAL GITHUB SAFETY DOCUMENTS
+====================================================================
+
+Create:
+
+SAFETY.md
+OPERATIONS.md
+SOP_TEMPLATES/
+RISK_ASSESSMENT_TEMPLATE.md
+JSA_TEMPLATE.md
+INCIDENT_REPORT_TEMPLATE.md
+EMERGENCY_CARD_TEMPLATE.md
+DATA_SECURITY.md
+REGULATORY_SOURCES.md.
+
+====================================================================
+CH. FINAL APPLICATION ARCHITECTURE ADDITION
+====================================================================
+
+Add a permanent top navigation:
+
+HOME
+LEARN
+DRONE
+GEODESY
+MISSION
+FLIGHT
+DATA
+PROCESS
+ANALYSE
+SAFETY
+QA/QC
+CASE STUDIES
+ASSESSMENT
+TRAINER
+ABOUT.
+
+====================================================================
+CI. ABOUT PAGE
+====================================================================
+
+Display:
+
+“Drone Surveying in Mining — Interactive Training Simulator”
+
+“Created / initiated by MD Salim Ansari”
+
+“Open-source educational project.”
+
+License:
+MIT.
+
+Include third-party acknowledgements separately.
+
+====================================================================
+CJ. FINAL DEFINITION OF SAFETY COMPLETENESS
+====================================================================
+
+Safety is complete only when the learner can:
+
+IDENTIFY HAZARDS
+→ ASSESS RISK
+→ SELECT CONTROLS
+→ BRIEF TEAM
+→ VERIFY AIRCRAFT
+→ VERIFY ENVIRONMENT
+→ MAKE GO/NO-GO DECISION
+→ OPERATE SAFELY
+→ RECOGNIZE ABNORMAL CONDITIONS
+→ EXECUTE EMERGENCY RESPONSE
+→ SECURE EQUIPMENT
+→ PRESERVE EVIDENCE
+→ REPORT
+→ LEARN
+→ IMPROVE SOP.
+
+====================================================================
+END SAFETY EXPANSION
+====================================================================
