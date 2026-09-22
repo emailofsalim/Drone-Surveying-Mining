@@ -13,20 +13,64 @@ import { SafetyPage } from '../modules/safety/SafetyPage';
 import { AboutPage } from '../modules/home/AboutPage';
 import { ThemeControls } from './ThemeControls';
 
-// §204 — the 3D scene is the heaviest module; keep it out of the initial bundle.
+// §204 — lazily load the heavier modules so the initial payload stays small.
 const VirtualMinePage = lazy(() =>
   import('../modules/mine/VirtualMinePage').then((m) => ({ default: m.VirtualMinePage })),
 );
+const ProcurementLabPage = lazy(() =>
+  import('../modules/procurement/ProcurementLabPage').then((m) => ({ default: m.ProcurementLabPage })),
+);
+const AircraftLabPage = lazy(() =>
+  import('../modules/aircraft/AircraftLabPage').then((m) => ({ default: m.AircraftLabPage })),
+);
+const SensorLabPage = lazy(() =>
+  import('../modules/sensors/SensorLabPage').then((m) => ({ default: m.SensorLabPage })),
+);
+const GnssLabPage = lazy(() =>
+  import('../modules/gnss/GnssLabPage').then((m) => ({ default: m.GnssLabPage })),
+);
+const MissionLabPage = lazy(() =>
+  import('../modules/flight/MissionLabPage').then((m) => ({ default: m.MissionLabPage })),
+);
+const PhotogrammetryLabPage = lazy(() =>
+  import('../modules/photogrammetry/PhotogrammetryLabPage').then((m) => ({ default: m.PhotogrammetryLabPage })),
+);
+const ProductsLabPage = lazy(() =>
+  import('../modules/products/ProductsLabPage').then((m) => ({ default: m.ProductsLabPage })),
+);
+const PayloadLabPage = lazy(() =>
+  import('../modules/products/PayloadLabPage').then((m) => ({ default: m.PayloadLabPage })),
+);
+const DataLabPage = lazy(() =>
+  import('../modules/products/DataLabPage').then((m) => ({ default: m.DataLabPage })),
+);
+const ReportPage = lazy(() =>
+  import('../modules/report/ReportPage').then((m) => ({ default: m.ReportPage })),
+);
 
+/**
+ * Navigation follows the specification's own chain (§0): buy → inspect → fly →
+ * capture → process → measure → verify → decide.
+ */
 const NAV = [
   { to: '/', label: 'Home', end: true },
   { to: '/mine', label: 'Virtual mine' },
   { to: '/knowledge', label: 'Knowledge graph' },
-  { to: '/north', label: 'North lab' },
-  { to: '/crs', label: 'CRS lab' },
-  { to: '/height', label: 'Height lab' },
-  { to: '/gsd', label: 'GSD & mission' },
-  { to: '/qaqc', label: 'QA/QC lab' },
+  { to: '/procurement', label: 'Procurement' },
+  { to: '/aircraft', label: 'Aircraft' },
+  { to: '/sensors', label: 'IMU & compass' },
+  { to: '/north', label: 'North' },
+  { to: '/crs', label: 'CRS' },
+  { to: '/height', label: 'Height' },
+  { to: '/gnss', label: 'GNSS' },
+  { to: '/gsd', label: 'GSD' },
+  { to: '/mission', label: 'Mission & flight' },
+  { to: '/photogrammetry', label: 'Photogrammetry' },
+  { to: '/products', label: 'Cloud & volume' },
+  { to: '/payloads', label: 'Payloads' },
+  { to: '/data', label: 'Formats & GIS' },
+  { to: '/qaqc', label: 'QA/QC' },
+  { to: '/report', label: 'Report & decision' },
   { to: '/formulas', label: 'Formulas' },
   { to: '/safety', label: 'Safety & SOPs' },
 ];
@@ -71,11 +115,21 @@ export function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/mine" element={<VirtualMinePage />} />
               <Route path="/knowledge" element={<KnowledgeGraphPage />} />
+              <Route path="/procurement" element={<ProcurementLabPage />} />
+              <Route path="/aircraft" element={<AircraftLabPage />} />
+              <Route path="/sensors" element={<SensorLabPage />} />
               <Route path="/north" element={<NorthLabPage />} />
               <Route path="/crs" element={<CrsLabPage />} />
               <Route path="/height" element={<HeightLabPage />} />
+              <Route path="/gnss" element={<GnssLabPage />} />
               <Route path="/gsd" element={<GsdLabPage />} />
+              <Route path="/mission" element={<MissionLabPage />} />
+              <Route path="/photogrammetry" element={<PhotogrammetryLabPage />} />
+              <Route path="/products" element={<ProductsLabPage />} />
+              <Route path="/payloads" element={<PayloadLabPage />} />
+              <Route path="/data" element={<DataLabPage />} />
               <Route path="/qaqc" element={<QaQcLabPage />} />
+              <Route path="/report" element={<ReportPage />} />
               <Route path="/formulas" element={<FormulaLibraryPage />} />
               <Route path="/safety" element={<SafetyPage />} />
               <Route path="/about" element={<AboutPage />} />

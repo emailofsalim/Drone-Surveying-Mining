@@ -10,7 +10,11 @@ const LIMITATIONS = [
   ['Aerodynamics and flight dynamics', 'Simplified training models. Not CFD, not a real autopilot, not a manufacturer-certified simulator.'],
   ['Geodesy', 'UTM is implemented from the standard series expansion for WGS 84/GRS 80. No datum transformations, no grid-shift files, no geoid model. Production work needs a proper transformation library and the applicable national parameters.'],
   ['Magnetic declination', 'Not modelled at all. The learner supplies a value; the application will not invent one.'],
-  ['Photogrammetry', 'Not yet implemented. When it is, the algorithms and their limitations will be documented alongside it.'],
+  ['Photogrammetry', 'Real collinearity, triangulation and a Levenberg-Marquardt bundle adjustment — but no lens-distortion model, no self-calibration, no robust loss, and keypoints synthesised from the terrain rather than detected in imagery.'],
+  ['Point cloud and surfaces', 'Clouds are generated from the terrain model, not reconstructed. Classification is a basic morphological filter, and gridding uses inverse-distance interpolation — no kriging, splines or breaklines.'],
+  ['Volume', 'Grid-prism method only. Always reported with its surface, boundary, base, method and units, because a volume without them is not a result.'],
+  ['GNSS and inertial', 'DOP is computed properly from the geometry matrix, but the constellation is synthetic and the error budget is educational. Inertial fusion is a complementary filter, not a Kalman filter.'],
+  ['Orthorectification and meshing', 'Not implemented. Contours, profiles and surface differencing are.'],
   ['Mine geometry', 'A fictitious parametric open pit. It is internally consistent but it is not a survey of anywhere.'],
   ['Every numeric value', 'Simulated training data. Nothing in this application is a real mine observation, flight log or deliverable.'],
 ];
@@ -51,10 +55,32 @@ export function AboutPage() {
             <strong>Phases 12–14</strong> — north references, CRS/projection, height and RL.
           </li>
           <li>
-            <strong>Phases 18 &amp; 20</strong> — GSD, footprint, overlap and mission geometry.
+            <strong>Phases 04–09</strong> — procurement from the objective, acceptance and incoming
+            inspection, drone anatomy, aerodynamics, propulsion and flight control.
           </li>
           <li>
-            <strong>Phase 36</strong> — QA/QC, checkpoint RMSE and the error budget.
+            <strong>Phases 10–11</strong> — IMU drift and fusion, magnetometer calibration and local
+            magnetic disturbance.
+          </li>
+          <li>
+            <strong>Phases 15–16</strong> — GNSS geometry and DOP, positioning modes, RTK against
+            PPK, NTRIP and the base-coordinate blunder.
+          </li>
+          <li>
+            <strong>Phases 17–23</strong> — camera, GSD, payloads, mission planning, pre-flight with
+            fault injection, survey flight, incidents and post-flight data lineage.
+          </li>
+          <li>
+            <strong>Phases 24–29</strong> — control and checkpoints, photogrammetry, triangulation,
+            bundle adjustment, point cloud and surfaces.
+          </li>
+          <li>
+            <strong>Phases 31–37</strong> — LiDAR, thermal, multispectral, formats and GIS/CAD,
+            volume and reconciliation, QA/QC and the error laboratory.
+          </li>
+          <li>
+            <strong>Phase 38 onward</strong> — report generator, engineering decision gate,
+            competency assessment and simulation scoring.
           </li>
         </ul>
         <p className="small muted" style={{ marginBottom: 0 }}>

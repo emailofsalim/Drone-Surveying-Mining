@@ -16,12 +16,17 @@ This application is an **educational simulator**. It is not an aircraft certific
 | Every coordinate, height, residual and volume | Simulated training data. None of it is a real observation. |
 | Control and checkpoints | Placed to teach the GCP/checkpoint distinction, not derived from any real network. |
 | Camera profiles | Generic, deliberately unbranded geometry. Real payload specifications must come from the manufacturer. |
+| Aircraft, platform and LiDAR classes | Generic capability classes. **No vendor specifications are reproduced or invented** (§11); product values must come from verified manufacturer documentation. |
+| Assessment and incident items | Written for this simulator. They are not a qualification, and passing them certifies nothing. |
 | SOP templates | Educational structures only. They are not site procedures and must not be used as such. |
 
 ## Physics and flight
 
 - Any physics implemented is a **simplified training model** and is labelled as such in the UI (§208).
-- No CFD, no real autopilot dynamics, no aircraft-specific performance model.
+- No CFD, no real autopilot dynamics, no aircraft-specific performance model. Momentum theory is used for propeller thrust and hover power with a flat efficiency; blade-element effects, rotor inflow, ground effect and vortex-ring state are all absent.
+- The PID laboratory drives a second-order plant, not an aircraft. **Gains must never be transferred to real hardware** (§33).
+- Battery endurance uses a nominal-voltage energy model with an illustrative temperature derating curve. It is not a manufacturer specification, and battery handling must follow the manufacturer's instructions.
+- The flight simulator flies constant-speed legs with instantaneous turns and a flat turn allowance. There is **no manual free-flight control** and no aircraft dynamics.
 - The mission planner computes **geometry only**: no turns, acceleration, climb, wind, battery model, take-off/landing time, or regulatory and site constraints. Real mission durations are longer.
 - Operating limits, RTH behaviour, battery handling, airspace rules, PPE and separation requirements are **not** defined here and must be taken from current applicable sources.
 
@@ -31,6 +36,8 @@ This application is an **educational simulator**. It is not an aircraft certific
 - **No datum transformations**, no grid-shift files, no realisation/epoch handling beyond recording the epoch as metadata.
 - **No geoid model.** The geoid separation `N` must be supplied by the learner from the applicable model for the site and vertical datum. The application will not invent a separation.
 - **No geomagnetic model.** Magnetic declination must likewise be supplied. A declination taken from an old report is not a declination for today.
+- **GNSS** computes DOP properly from the satellite geometry matrix, but uses a **synthetic constellation, not real ephemerides**. The error budget (range sigma per mode, ~1 mm/km baseline decorrelation, correction-age growth) is an educational model, not a receiver specification. There is no ionospheric model and no carrier-phase ambiguity resolution.
+- **Inertial** drift uses free-inertial propagation of a constant bias plus the gravity-leak term, and a complementary filter for fusion. There is no Kalman filter, no Earth-rotation or transport-rate term, and no scale-factor or misalignment modelling.
 - The project CRS is never assumed. Operations across mismatched frames raise an error instead of returning a plausible number.
 
 ## Imaging
@@ -41,7 +48,13 @@ This application is an **educational simulator**. It is not an aircraft certific
 
 ## Photogrammetry and products
 
-- Photogrammetric reconstruction, point clouds, surfaces, orthomosaics, LiDAR and change detection are **not yet implemented** (phases 25–35). When they are, the algorithms used and their limitations will be documented alongside them, as §210 requires.
+- **Photogrammetry** is implemented numerically: pinhole collinearity, least-squares ray triangulation, reprojection residuals and a Levenberg-Marquardt bundle adjustment with control weighting. It has **no lens-distortion model and no self-calibration of interior orientation**, uses numerical Jacobians and no robust loss, and is sized for small teaching networks rather than production blocks. Keypoints are synthesised from the terrain model rather than detected in real imagery, so detector behaviour under texture, blur and glare is modelled **statistically, not optically**.
+- **Point clouds** are generated from the terrain function plus modelled cover, not reconstructed from imagery. Ground classification is a basic progressive morphological filter; production filters handle steep benches far better.
+- **Surfaces** use gridding with inverse-distance gap filling. There is no kriging, no spline interpolation and no breakline-constrained triangulation.
+- **Volumes** use the grid-prism method only. TIN-prism volumes are named in the interface but resolve to the same grid computation.
+- **Orthorectification and meshing are not implemented** (phase 30). Contours, profiles and surface differencing are.
+- **LiDAR** is modelled through its range, swath, trajectory and boresight relationships. There is no waveform processing, no multiple-return simulation against real geometry, and no strip adjustment.
+- **Thermal** uses a Stefan-Boltzmann radiance balance with stated emissivity, background and transmission. There is no atmospheric transfer model and no camera radiometric calibration.
 - The stockpile carries an analytic truth volume so that a later measured volume has something to be compared against. That truth value is a property of the simulated model, not of any real pile.
 
 ## Proprietary software

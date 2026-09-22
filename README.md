@@ -29,7 +29,7 @@ npm install
 npm run dev        # development server
 npm run build      # typecheck + production bundle → dist/
 npm run preview    # serve the production bundle
-npm test           # engine test suite
+npm test           # engine test suite (245 tests)
 ```
 
 Requires Node 20 or newer. No backend is needed — the simulator is a static web application.
@@ -46,19 +46,25 @@ The app uses hash routing, so deep links work on static hosts with no SPA rewrit
 
 ## What is built today
 
-The master specification (`docs/spec/01_MASTER_AI_SPECIFICATION.txt`, §259–§260) defines **45 build phases** and requires them to be delivered incrementally — inspecting existing code, implementing, testing and documenting before continuing. This repository currently covers:
+The master specification (`docs/spec/01_MASTER_AI_SPECIFICATION.txt`, §259–§260) defines **45 build phases** and requires them to be delivered incrementally — inspecting existing code, implementing, testing and documenting before continuing. State of the build:
 
 | Phase | Area | State |
 | --- | --- | --- |
 | 01 | Repository, design system, unit engine, formula engine, provenance engine, tests, CI | Built |
 | 02 | The virtual mine — one dataset behind 3D, plan and section views | Built |
 | 03 | Knowledge graph across the full specification chain | Built |
-| 12 | True / magnetic / grid north, declination, convergence, conversion-error lab | Built |
-| 13 | CRS, datum, ellipsoid, UTM projection, scale factor, the "why does the mine move?" traps | Built |
-| 14 | Height, geoid, RL, levelling reduction, trigonometric heights, drone altitude terms | Built |
-| 18, 20 | GSD, footprint, overlap, mission geometry, image-quality limits | Built |
-| 24, 36 | Control network, checkpoint RMSE, systematic error, error budget, decision gate | Built (24 partial) |
-| 04–11, 15–17, 19, 21–23, 25–35, 37–45 | Procurement, aircraft, aerodynamics, propulsion, flight control, IMU, compass, GNSS/RTK/PPK, payloads, pre-flight, flight simulator, photogrammetry, point cloud, surfaces, orthomosaic, LiDAR, GIS/CAD, volume, case studies, AI tutor, PWA | Planned |
+| 04–05 | Procurement from the objective, technical evaluation, acceptance and incoming inspection | Built |
+| 06–09 | Drone anatomy, aerodynamics, propulsion, flight control, PID, motor mixing, energy | Built |
+| 10–11 | IMU drift and fusion, magnetometer calibration, local magnetic disturbance | Built |
+| 12–14 | North references, CRS/datum/UTM, height, geoid and RL | Built |
+| 15–16 | GNSS geometry and DOP, positioning modes, RTK vs PPK, NTRIP, base-coordinate blunder | Built |
+| 17–19 | Camera, GSD, footprint, overlap, LiDAR, thermal, multispectral | Built |
+| 20–23 | Mission planner, pre-flight with fault injection, survey flight, incidents, post-flight lineage | Built (22 partial) |
+| 24–29 | Control and checkpoints, photogrammetry, triangulation, bundle adjustment, point cloud, surfaces | Built |
+| 31–33, 35 | LiDAR trajectory and boresight, thermal/multispectral, formats and GIS/CAD, volume and reconciliation | Built |
+| 36–37 | QA/QC, checkpoint RMSE, systematic error, error budget, error laboratory | Built |
+| 30, 34, 38–39, 41 | Orthorectification and mesh, mine modelling, case studies, super simulation, trainer mode | Partial |
+| 40, 42 | AI tutor, offline/PWA | Planned |
 
 The in-app **knowledge graph** (`/#/knowledge`) is the live version of this table: it records what each topic requires, what breaks without it, and whether it is built, partial or planned.
 
@@ -67,12 +73,21 @@ The in-app **knowledge graph** (`/#/knowledge`) is the live version of this tabl
 ```
 src/
 ├── engine/          pure TypeScript, no React — every calculation lives here
-│   ├── units/       unit engine; cross-dimension conversion is refused, not scaled
-│   ├── geodesy/     north references, UTM, coordinates with mandatory metadata, heights
-│   ├── camera/      GSD, footprint, overlap, mission geometry
-│   ├── qaqc/        residuals, RMSE, error budget
-│   ├── provenance/  data origin, quality, limitations, lineage
-│   └── formula.ts   formula registry with substitution + dimensional analysis
+│   ├── units/           cross-dimension conversion is refused, not scaled
+│   ├── geodesy/         north references, UTM, coordinates with mandatory metadata, heights
+│   ├── sensors/         IMU drift and fusion, magnetometer distortion and calibration
+│   ├── gnss/            DOP from satellite geometry, positioning modes, RTK/PPK
+│   ├── flight/          aerodynamics, energy, PID, mission execution, pre-flight
+│   ├── camera/          GSD, footprint, overlap, mission geometry
+│   ├── photogrammetry/  collinearity, triangulation, bundle adjustment, image network
+│   ├── pointcloud/      synthetic cloud, outlier removal, ground classification
+│   ├── terrain/         DSM/DTM gridding, contours, differencing, volume, reconciliation
+│   ├── payloads/        LiDAR, thermal, multispectral
+│   ├── gis/             format catalogue, conversion loss, CSV/DXF/GeoJSON export
+│   ├── qaqc/            residuals, RMSE, error budget
+│   ├── assessment/      report generator, decision gate, competency scoring
+│   ├── provenance/      data origin, quality, limitations, lineage
+│   └── formula.ts       formula registry with substitution + dimensional analysis
 ├── data/            the virtual mine, cameras, formula library, knowledge graph, SOP index
 ├── modules/         one folder per lab, each a thin layer over the engine
 ├── components/      design-system primitives that enforce the spec's UI rules
@@ -89,7 +104,7 @@ See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for detail and [`docs/PHASES.
 
 ## Documented limitations
 
-Stated in full in [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md). In short: simplified training models for physics, no geoid model, no geomagnetic model, no datum transformations, no photogrammetric reconstruction yet, and a fictitious site. Simulation is not certification.
+Stated in full in [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md). In short: simplified training models for physics, no geoid model, no geomagnetic model, no datum transformations, no lens-distortion model in the bundle adjustment, no orthorectification or meshing, and a fictitious site. Simulation is not certification.
 
 ## Reference projects
 
